@@ -1,30 +1,81 @@
 #!/usr/bin/env bash
 # scripts/new_session.sh
-# Create a new diary session file with the exact template requested.
+# Create a new diary session file, auto-incrementing the session number for today's date if not provided.
 # Usage:
-#   ./scripts/new_session.sh            # session 1, start = current time
-#   ./scripts/new_session.sh 2          # session 2, start = current time
-#   ./scripts/new_session.sh 2 09:30    # session 2, start = 09:30 (optional)
+#   ./scripts/new_session.sh                # create next session for today (start = now)
+#   ./scripts/new_session.sh 2              # create session 2 for today (error if exists)
+#   ./scripts/new_session.sh 2 09:30        # create session 2 with start 09:30
+#   ./scripts/new_session.sh 09:30          # create next session for today but set start=09:30
 set -euo pipefail
 
-DATE=$(date +%F)               # YYYY-MM-DD
-DEFAULT_START=$(date +%H:%M)   # current time HH:MM
-SESSION="${1:-1}"              # optional first arg = session number (default 1)
-START_SESSION="${2:-$DEFAULT_START}"  # optional second arg = start time override
+cd ~/Desktop/MasterThesis2526/the-playground/progress
+
+# --- configuration ---
 DIR="diary"
-FILE="${DIR}/${DATE}-s${SESSION}.md"
 AUTHOR="Pedro Azevedo"
 
-# Make diary dir
+# --- date / defaults ---
+DATE=$(date +%F)               # YYYY-MM-DD
+DEFAULT_START=$(date +%H:%M)  # current time HH:MM
+
+# --- parse args ---
+# We support two calling styles:
+#  - ./new_session.sh [SESSION] [START]
+#  - ./new_session.sh [START]   (if first arg matches HH:MM, treated as start)
+ARG1="${1:-}"
+ARG2="${2:-}"
+
+# detect if ARG1 looks like time HH:MM
+is_time() {
+  [[ "$1" =~ ^([0-1][0-9]|2[0-3]):[0-5][0-9]$ ]]
+}
+
+if [ -n "$ARG1" ] && is_time "$ARG1"; then
+  # called as: ./new_session.sh 09:30  -> no session provided, start = ARG1
+  START_SESSION="$ARG1"
+  FORCE_SESSION=""
+elif [ -n "$ARG1" ] && ! is_time "$ARG1"; then
+  FORCE_SESSION="$ARG1"
+  START_SESSION="${ARG2:-$DEFAULT_START}"
+else
+  FORCE_SESSION=""
+  START_SESSION="${ARG2:-$DEFAULT_START}"
+fi
+
+# --- ensure diary dir exists ---
 mkdir -p "$DIR"
 
-# Avoid overwriting existing file
+# --- compute session number if not forced ---
+SESSION=""
+if [ -n "$FORCE_SESSION" ]; then
+  SESSION="$FORCE_SESSION"
+else
+  # enable nullglob so the glob expands to nothing if no files found
+  shopt -s nullglob
+  files=( "$DIR/${DATE}-s"*.md )
+  shopt -u nullglob
+
+  max=0
+  for f in "${files[@]:-}"; do
+    bn=$(basename "$f")
+    # match patterns like YYYY-MM-DD-sN.md
+    if [[ "$bn" =~ -s([0-9]+)\.md$ ]]; then
+      n=${BASH_REMATCH[1]}
+      if (( n > max )); then max=$n; fi
+    fi
+  done
+  SESSION=$((max + 1))
+fi
+
+FILE="${DIR}/${DATE}-s${SESSION}.md"
+
+# If forced session and file exists, abort to avoid overwrite
 if [ -f "$FILE" ]; then
-  echo "Error: File already exists: $FILE"
+  echo "Error: file already exists: $FILE"
   exit 1
 fi
 
-# Create the file with the exact template content (variables expanded)
+# --- write template exactly as requested ---
 cat > "$FILE" <<EOF
 ---
 id: ${DATE}-s${SESSION}
@@ -55,40 +106,64 @@ author: ${AUTHOR}
 **Quick notes:**
 EOF
 
-echo "Created diary file: $FILE"
+echo "Created diary file: $FILE (start=${START_SESSION})"
 
-# If inside a git repository, add, commit and attempt to push (if upstream exists)
+# --- git add / commit / push (best-effort) ---
 if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-  git add "$FILE"
+  git add "$FILE" || true
   if git commit -m "diary: start ${DATE}-s${SESSION} (start ${START_SESSION})" >/dev/null 2>&1; then
     echo "Committed $FILE"
   else
     echo "Warning: git commit failed (check git config or commit hooks)."
   fi
 
-  # push if the current branch has an upstream set
-  CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  # push only if upstream exists for current branch
   if git rev-parse --symbolic-full-name --abbrev-ref @{u} >/dev/null 2>&1; then
-    echo "Pushing to remote..."
     if git push; then
       echo "Pushed to remote."
     else
-      echo "Push failed. Check remote/auth."
+      echo "Warning: push failed (check remote/auth)."
     fi
   else
+    CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
     echo "No upstream set for branch '$CURRENT_BRANCH'. To push manually run:"
     echo "  git push -u origin $CURRENT_BRANCH"
   fi
 else
-  echo "Not a git repository. Skipping git add/commit/push."
-  echo "Initialize git with: git init && git remote add origin <url>  (if desired)"
+  echo "Not in a git repository — skipping git add/commit/push."
 fi
 
-# Optionally open the file in the default editor if $EDITOR is set
-if [ -n "${EDITOR:-}" ]; then
-  if command -v "$EDITOR" >/dev/null 2>&1; then
-    "$EDITOR" "$FILE" &
+# --- try to open the file in IntelliJ IDEA (or fallback) ---
+open_in_idea() {
+  local f="$1"
+  # use IDEA_CMD env var if set
+  if [ -n "${IDEA_CMD:-}" ]; then
+    if command -v "$IDEA_CMD" >/dev/null 2>&1 || [ -x "$IDEA_CMD" ]; then
+      "$IDEA_CMD" "$f" >/dev/null 2>&1 & disown || true
+      return 0
+    fi
   fi
+
+  if command -v intellij-idea-ultimate >/dev/null 2>&1; then
+    idea "$f" >/dev/null 2>&1 & disown || true
+    return 0
+  fi
+
+  # generic open
+  if command -v xdg-open >/dev/null 2>&1; then
+    xdg-open "$f" >/dev/null 2>&1 & disown || true
+    return 0
+  fi
+
+  return 1
+}
+
+if open_in_idea "$FILE"; then
+  echo "Opened $FILE in IntelliJ (or fallback editor)."
+else
+  echo "Could not open IntelliJ automatically. To open manually run:"
+  echo "  idea $FILE   # if you have the 'idea' launcher"
+  echo "  code -g $FILE"
 fi
 
 exit 0
