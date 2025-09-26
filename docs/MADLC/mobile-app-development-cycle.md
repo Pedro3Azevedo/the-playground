@@ -103,6 +103,7 @@ With the mobile application in the phones of the clients, ongoing maintenance is
 This phase involves collecting feedback to identify and address bugs, performance issues, and usability improvements. 
 Regular updates are made to enhance features, improve the user interface, and apply security patches. If the application relies on backend servers, maintaining and updating the server infrastructure is also a crucial part of this phase.
 
+## Conclusion
 
 In the article[reference], it is reported that an industry-oriented application was successfully developed using the MADLC model.
 The model facilitated effective planning and execution of the application involving various features. 
