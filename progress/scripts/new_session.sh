@@ -105,7 +105,7 @@ author: ${AUTHOR}
 
 **Quick notes:**
 EOF
-
+cp $FILE ../../-123951-thesis-diary/docs/
 echo "Created diary file: $FILE (start=${START_SESSION})"
 
 # --- git add / commit / push (best-effort) ---
