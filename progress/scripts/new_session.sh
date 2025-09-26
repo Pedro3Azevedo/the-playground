@@ -105,8 +105,9 @@ author: ${AUTHOR}
 
 **Quick notes:**
 EOF
-cp $FILE ../../-123951-thesis-diary/docs/
+
 echo "Created diary file: $FILE (start=${START_SESSION})"
+cp $FILE /home/azevedo/Desktop/MasterThesis2526/123951-thesis-diary/diary
 
 # --- git add / commit / push (best-effort) ---
 if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
@@ -115,19 +116,6 @@ if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     echo "Committed $FILE"
   else
     echo "Warning: git commit failed (check git config or commit hooks)."
-  fi
-
-  # push only if upstream exists for current branch
-  if git rev-parse --symbolic-full-name --abbrev-ref @{u} >/dev/null 2>&1; then
-    if git push; then
-      echo "Pushed to remote."
-    else
-      echo "Warning: push failed (check remote/auth)."
-    fi
-  else
-    CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-    echo "No upstream set for branch '$CURRENT_BRANCH'. To push manually run:"
-    echo "  git push -u origin $CURRENT_BRANCH"
   fi
 else
   echo "Not in a git repository — skipping git add/commit/push."
