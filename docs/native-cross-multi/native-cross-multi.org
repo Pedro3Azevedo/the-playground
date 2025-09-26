@@ -64,10 +64,10 @@ Cost of Development (n) = FC * (1 + Cost of going Native)
 In this equation, /n/ is the number of platforms and /FC/ is the feature complexity.
 As for the /Cost of going Native/, reflect the additional effort required when some parts must be implemented with native code.
 Its value depends on the level of interoperability that the cross-platform framework provides with native components, which is not optimal with the ones above. When there is a necessety to implement native code, the knowladge gap between the framework and native languages adds to the expense, as well as the synchronization. [cite:@kmm]
-With this, it is possible to visiualize the different cost of development, adding the Cross-Platform with roadblocks. The figure [[fig:costNative]], illustrates how the cost of cross-platform development increases relative to both cost of Native and Native with Sync Costs. A roadblock occurs when a required feature cannot be implemented only with the frameworks and must instead be written in native code, producing a sudden rising in cost.
+With this, it is possible to visualize the different cost of development, adding the Cross-Platform with roadblocks. The figure [[fig:costNative]], illustrates how the cost of cross-platform development increases relative to both cost of Native and Native with Sync Costs. A roadblock occurs when a required feature cannot be implemented only with the frameworks and must instead be written in native code, producing a sudden rising in cost.
 If no native features are required, cross -platform development can remain les expensive with the previous discussed limitations. However, as more features demand native implementation, the cumulative cost eventually exceeds that of a fully native approach.
 
-#+CAPTION: Cost of cross-platform development with potencial roadblocks as a function complexity[cite:@kmm]
+#+CAPTION: Cost of cross-platform development with potential roadblocks as a function complexity[cite:@kmm]
 #+NAME: fig:costCross
 [[./images/Figure_1.6_B17614_cost_of_cross.png]]
 
@@ -75,12 +75,15 @@ If no native features are required, cross -platform development can remain les e
 ** Multiplatform
 
 Although cross-platforms frameworks solve the problem of dealing with different platforms, it is still not optimal if the application demands platform specific features, and keeping up with Android and iOS updates.
-To go around this conditons, Roby Nagy refers one last approach, Kotlin Multiplatform (KMP), a multiplatform solution.
-Kotlin Multiplatform is an open-source technology developed by JetBrains, that allow developers to create applications for multiple platforms in a efficient way, by reusing code across them and still having hte native approach benefits.[cite:@kmpJetbrain]
-As Jetbrains mentions in their website
-Kotlin Multiplatform is an open-source technology developed by JetBrains, that allow developers to create applications for multiple platforms in a efficient way, by reusing code across them and still having hte native approach benefits.[cite:@kmpJetbrain], developers can share code without loosing the qualities of native programming, good user experience, good app performance and having full platform capabilities, along side the benefits of the cross-platform, reducing development time, consistency in behavior in the different platforms.
-With this approach, the developer has 3 options, it can share and only write a feature in Kotlin, or implement the full loigic and only develop the UI nativly, and finally, with Compose Multiplatform, also share the UI.[cite:@kmpJetbrain]
-Jetpack Compose[cite:@jetpack-compose] is a toolkit to develop the User Interface of Android apps. It is implemented in a declarative way, compatible with Kotlin APIs, enabling developers to intuitivly build fast UIs. It also supports Google's Material Design, a "open-source design system for building beutiful, usable products"[cite:@material-design].
+To go around this conditions, Roby Nagy refers one last approach, Kotlin Multiplatform (KMP), a multiplatform solution.
+Kotlin Multiplatform is an open-source technology developed by JetBrains, that allow developers to create applications for multiple platforms in a efficient way, by reusing code across them and still having the native approach benefits.[cite:@kmpJetbrain]
+As Jetbrains mentions in their website, Kotlin Multiplatform is an open-source technology developed by JetBrains, that allow developers to create applications for multiple platforms in a efficient way, by reusing code across them and still having the native approach benefits.[cite:@kmpJetbrain], developers can share code without loosing the qualities of native programming, good user experience, good app performance and having full platform capabilities, along side the benefits of the cross-platform, reducing development time, consistency in behavior in the different platforms.
+With this approach, the developer has 3 options, it can share and only write a feature in Kotlin, or implement the full logic and only develop the UI natively, and finally, with Compose Multiplatform, also share the UI.[cite:@kmpJetbrain]
+Jetpack Compose[cite:@jetpack-compose] is a toolkit to develop the User Interface of Android apps. It is implemented in a declarative way, compatible with Kotlin APIs, enabling developers to intuitively build fast UIs. It also supports Google's Material Design, a "open-source design system for building beutiful, usable products"[cite:@material-design].
 Since 2021, developers can build shared UIs for Android, iOS, desktop and web, feeling natural on every platform with Compose Multiplatform.[cite:@compose-multiplatform]
 
-
+Thompson Carter, refers in his book[cite:@kotlinInDepth] the same benefits of KMP, code reusability, faster development, reduce maintenance (as is only need to fix bugs in one place), flexibility (share code and still access platform-specific features and APIs) and community support. However, he mentions some challenges as:
+- Maturity, as the KMP is recent and is still evolving, some libraries and tools may not be fully supported;
+- The integration with Platform-Specific APIs can be challenging;
+- The transition from single-platform development can be a bit difficult, with the introduction of new paradigms;
+- And the integration with an existing project can involve significant refactoring.
