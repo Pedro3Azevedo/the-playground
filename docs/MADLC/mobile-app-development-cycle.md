@@ -9,6 +9,7 @@ In the paper _Modeling the Mobile Application Development Lifecycle_, Tejas Vith
 - Identification Phase;
 - Design Phase;
 - Development Phase;
+- Prototyping Phase;
 - Testing Phase;
 - Deployment Phase;
 - Maintenance Phase.
@@ -26,7 +27,6 @@ By the end of this phase, the principal requirements are expected to be document
 Splitting this phase into tasks:
 
 - Problem identification;
-- Stakeholders identification and persona definition;
 - User research and analysis;
 - Market and competitive analysis;
 - Initial functional requirements specification;
@@ -48,9 +48,9 @@ Here are the tasks for this phase:
 - Refinement of functional requirements;
 - Modular decomposition;
 - Software architecture design;
-- Prototype planning;
 - Wireframing and user flow storyboard;
 - UI for the different platforms.
+- Prototype planning;
 
 ## Development Phase
 
