@@ -107,7 +107,6 @@ author: ${AUTHOR}
 EOF
 
 echo "Created diary file: $FILE (start=${START_SESSION})"
-cp $FILE /home/azevedo/Desktop/MasterThesis2526/123951-thesis-diary/diary
 
 # --- git add / commit / push (best-effort) ---
 if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
