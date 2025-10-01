@@ -36,65 +36,21 @@ This leads to inefficient use of time, by going to a court with unsatisfiable co
 
 Design and implement a digital platform that addresses the coordination and information gaps in amateur basketball in public courts, by focusing on two primary features:
 
-1. Game discovery and organization - matchmaking and scheduling
-   - Enabling players to connect to others and challenge each other.
-2. Court Availability and condition awareness
-   - Letting users analysing and choosing the best court to go.
+1. Pickup games* - Create, discover and join informal matches (pickup games), with features that support different play modes and social organization:
+   - Players can create, search for and join games listed on the platform;
+   - The games can be competitive or casual;
+   - Competitive games contribute to a leaderboard/raking table per court;
+   - Game formats include 1v1, 3v3, 4v4, 5v5;
+   - Users can create and mange persistent teams and challenge other teams.
+   - Users can set a team as "next"** to a game, to play against the winner. 
+2. Court Availability and condition awareness - Give users real-time and information about courts so they can decide where and when to go
+   - Persistent court catalogue with attributes - name, location, full/half court, number of courts, has water fountain, etc.
+   - Users can indicate intent to attend a court at a specific time, so others can have an idea of the availability.
+   - User can mark themselves "present" at a court.
+   - Optional automatic geolocation-based check-in to simplify presence signalling.
+   - Live occupancy indicators to show how many users intend to go and how many are currently present.
+   - Court condition reporting by the users, they can submit short status updates to report issues.
+   - Display short weather summary for the court location (optional)
 
-
-
-
-
-
-[//]: # (After talking to some basketball players and enthusiasts, and gather some responses of a survey, here is the problem to address:)
-
-[//]: # ()
-[//]: # (- Basketball players and enthusiasts would like to go to public courts more often. Why are they not going as often as they would like?)
-
-[//]: # (  - Two scenarios were found:)
-
-[//]: # (    - There is not enough players to play with;)
-
-[//]: # (    - The court is always full.)
-
-[//]: # (- When basketball players and enthusiasts go to the public court, what do they find more annoying?)
-
-[//]: # (  - Court conditions;)
-
-[//]: # (  - Empty or Full court;)
-
-[//]: # (  - Problems with other players:)
-
-[//]: # (    - Aggressive players;)
-
-[//]: # (    - Unpleasant players to play with;)
-
-[//]: # (    - Individualists;)
-
-[//]: # (    - Players that do not take it seriously / Uncompetitive players.)
-
-[//]: # ()
-[//]: # ()
-[//]: # (## Possible Solution)
-
-[//]: # ()
-[//]: # (Build a platform with two main purposes:)
-
-[//]: # (- Organize games with friends and strangers;)
-
-[//]: # (- Check court availability and conditions.)
-
-[//]: # ()
-[//]: # (Why is it a possible solution?)
-
-[//]: # (Players do not know enough people to play with or against, and so, they go to the court gambling if it is full, empty or with enough players to play a match.)
-
-[//]: # (With this platform players can meet others and challenge them to games.)
-
-[//]: # (Or can check how many players are or will be at a given time in a court, choosing to whether to go to this or to another.)
-
-[//]: # (Players can see the characteristics of the court. Does it have a full court, or is it just half? Does it have a drinking fountain?)
-
-[//]: # (With other specific features, the platform can address other encounter issues, such as, competitiveness, unpleasant players to play with.)
-
-[//]: # ()
+*pickup games is the name used by basketball players to call a game without a formal organization (not in a league, no referee, no strick rules) [reference](https://www.basketballforcoaches.com/pickup-basketball/)
+**"next" is used in the casual pickup games to tell the current teams playing, that wants to play against the winning team.
