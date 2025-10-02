@@ -53,4 +53,5 @@ Design and implement a digital platform that addresses the coordination and info
    - Display short weather summary for the court location (optional)
 
 *pickup games is the name used by basketball players to call a game without a formal organization (not in a league, no referee, no strick rules) [reference](https://www.basketballforcoaches.com/pickup-basketball/)
+
 **"next" is used in the casual pickup games to tell the current teams playing, that wants to play against the winning team.
