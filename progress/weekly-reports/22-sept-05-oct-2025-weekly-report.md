@@ -5,7 +5,9 @@ end date: 2025-10-05
 sprint: 1
 author: Pedro Azevedo
 ---
-
+| Student       | n      | Thesis                                                                |
+|---------------|--------|-----------------------------------------------------------------------|
+| Pedro Azevedo | 123951 | The Playground: mobile platform to connect amateur basketball players |
 # Weekly report  - 22/09/2025 - 05/10/2025
 
 ## What was done

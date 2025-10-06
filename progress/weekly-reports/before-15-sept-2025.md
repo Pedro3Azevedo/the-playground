@@ -1,3 +1,18 @@
+---
+id: before-15-sept-week
+end date: 2025-09-22
+sprint: 0
+author: Pedro Azevedo
+---
+| Student       | n      | Thesis                                                                |
+|---------------|--------|-----------------------------------------------------------------------|
+| Pedro Azevedo | 123951 | The Playground: mobile platform to connect amateur basketball players |
+
+
+
+# Weekly Report - Before 15 September 2025
+
+
 Before the classes started at 15 of september 2025, I began the project by:
 
 1 - Writing a survey, that can be answered in the following link:
