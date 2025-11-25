@@ -308,6 +308,12 @@ Test:
 - user can write a review
 - user can add a classification
 
+### FR- : See Court details and add to facourite
+
+User Story: As Miguel I want to see the court details and add to my favorites
+
+
+
 ### FR-21: Intention on going   
 
 Type: Functional
@@ -333,3 +339,132 @@ User Story: As Carlos, I want ot be able to see how many players intend on going
 
 Test:
 - user can see in the court how many players will be there in a specific time and date
+
+### FR-23: Send friends
+
+Type: Functional
+
+Priority: Must Have
+
+Description: The system SHALL allow users to send friends requests
+
+User Story: As Miguel I want to be able to send a friend request so that I can easily invite users to games
+
+Acceptance Criteria:
+
+- A user receives a notification with a firend request
+
+### FR-24: Accept or Reject friend request
+
+Type: Functional
+
+Priority: Must Have
+
+Description: The system SHALL allow users to accept or reject a friend request
+
+User Story: As Miguel I want to accept a friend request so that I can be friends with other users and invite them for games easily
+
+Acceptance Criteria:
+
+- The user sending the request appears in the list of friends, and the user accepting appears in the request sender if accepts
+- A notification is sent to the user who sent the friend request informing about the decision
+- The user sending the request does not appear in the list of friends if rejected
+
+### FR-25: Game messaging
+
+Type: Functional
+
+Priority: Should Have
+
+Description: The system SHALL allow users that will play in a game to chat with each other
+
+User Story: As Miguel, I want to be able to chat with the users I will play with so that we can organize better
+
+Acceptance Criteria:
+
+- Users send messages in a group with the players of a scheduled game
+
+### FR-26: Game History
+
+Type: Functional
+
+Priority: Should Have
+
+Description: The system SHALL allow users to see the last games he played
+
+User Story: As Miguel, I want to see the last games I played, players I played with and the final result
+
+Acceptance Criteria:
+
+- A list of the last games appear
+- The games show the result and the players
+
+### FR-27: Search Users and Teams
+
+Type: Functional
+
+Priority: Must Have
+
+Description: The system SHALL allow users to search for players and teams to challenge them or send friends request
+
+User Story: As Miguel I want to search for other users and teams so that I can challenge them and send friends requests
+
+Acceptance Criteria:
+
+- A list of players is shown sorted favourite courts in common by default
+- The user can select users search or team search
+- The user can search for a player by name and the system shows players with the name or related
+- The user can filter by favourite court and it shows only players with have that court has favourite
+
+### FR-28: User Authentication
+
+Type: Functional
+
+Priority: Must Have
+
+Description: The system SHALL have a registration page, a login page and a reset password mechanism, so that new users can register, users can save data and login and recover the password
+
+User Story: As Carlos I want to register in the app, login anytime I want in different devices and keep the data and if I forget the password or if it was compromised I can reset it.
+
+Acceptance Criteria:
+
+### FR-29: Profile Management
+
+Type: Functional
+
+Priority: Must Have
+
+Description: The system SHALL allow the user to edit the profile changing some parameters
+
+User Story: As Carlos, I want to be able to change the information I initially added to my profile so that my information is updated
+
+Acceptance Criteria:
+
+### FR-30: Notification Settings
+
+Type: Functional
+
+Priority: Must Have
+
+Description: The system SHALL allow the users to edit the notifications preferences to receive the notifications they want
+
+User Story: As Carlos, I want to receive only notifications that I am interest in
+
+Acceptance Criteria:
+
+- The system shows different type of notifications and options do enable or disable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
