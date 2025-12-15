@@ -1,6 +1,146 @@
 
 # Non Functional Requirements
 
+# Non-Functional Requirements List
+
+### NFR-01: Offline Availability
+
+**Requirement:** The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+**Priority:** Must Have
+**ISO-25010:** Reliability(Availability, Fault Tolerance)
+
+### NFR-02: Data Consistency
+
+**Requirement:** The application shall not data loss after a write operation, even if a crash or an unexpected termination occur.
+**Priority:** Must Have
+**ISO-25010:** Reliability(Faultlessness, Recoverability)
+
+### NFR-03: Graceful Degradation
+
+**Requirement:** In case of a failed backend request, the application shall:
+1. Display cached data when available
+2. Show a clear, user-friendly error message
+3. Never crash or display technical error details to the user
+4. Allow retry when appropriate
+   **Priority:** Should Have
+   **ISO-25010:** Reliability(Fault Tolerance)
+
+### NFR-04: User Authentication
+
+**Requirement:** The application shall allow users to authenticate via social login or email/password.
+**Priority:** Must Have
+**ISO-25010:** Security(Authenticity, Confidentiality)
+
+### NFR-05: Data Privacy (GDPR Compliance)
+
+**Requirement:** The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
+**Priority:** Must Have
+**ISO-25010:** Security(Confidentiality, Integrity)
+
+### NFR-06: Secure Data Transmission
+
+**Requirement:** The application shall transmit data between client and backend using HTTPS with TLS 1.3.
+**Priority:** Must Have
+**ISO-25010:** Security(Confidentiality, Integrity)
+
+### NFR-07: Location Privacy
+
+**Requirement:** The application shall never expose to other users the user location coordinates, only hte location of the court should be shared publicly.
+**Priority:** Must Have
+**ISO-25010:** Security(Confidentiality)
+
+### NFR-08: Learnability
+
+**Requirement:** The application shall enable new users to complete core tasks without prior training or documentation
+**Priority:** Must Have
+**ISO-25010:** Interaction Capability(Learnability)
+
+### NFR-09: Error Feedback
+
+**Requirement:** The application shall provide a clear, descriptive error message when a user action fails explaining why.
+**Priority:** Should Have
+**ISO-25010:** Interaction Capability(Self-descriptiveness, User error protection)
+
+### NFR-10: Outdoor Readability
+
+**Requirement:** The application shall remain readable in outdoor sunlight conditions through high contrast UI and support for system dark/light modes.
+**Priority:** Could Have
+**ISO-25010:** Interaction Capability(Operability)
+
+### NFR-11: Cross-Platform Support
+
+**Requirement:** The application shall run on both Android and iOS platform
+**Priority:** Must Have
+**ISO-25010:** Flexibility(Adaptability)
+
+### NFR-12: Screen Compatability
+
+**Requirement:** The application shall function correctly on devices with varying screen sizes and capabilities, for only phones.
+**Priority:** Should Have
+**ISO-25010:** Flexibility(Adaptability)
+
+### NFR-13: GPS Integration
+
+**Requirement:** The application shall integrate with device's native GPS/GNSS hardware for location services
+**Priority:** Must Have
+**ISO-25010:** Compatability(Interoperability)
+
+### NFR-14: Maps Service Integration
+
+**Requirement:** Application shall integrate with device maps services, to open maps court location.
+**Priority:** Could Have
+**ISO-25010:** Compatability(Co-existence, Interoperability)
+
+### NFR-15: Code Modularity
+
+**Requirement:** The application shall follow a clean architecture principles with separation between presentation, domain, and data layers. Changes to one module shall have minimal impact on others.
+**Priority:** Should Have
+**ISO-25010:** Maintainability(Modularity, Modifiability)
+
+### NFR-16: Testability
+
+**Requirement:** The application shall have unit test for core business logic. Acceptance test shall be written for user stories and followed a ATDD methodology.
+**Priority:** Should Have
+**ISO-25010:** Maintainability(Testability)
+
+### NFR-17: Documentation
+
+**Requirement:** The application shall be complemented with documentation for APIs and business logic.
+**Priority:** Should Have
+**ISO-25010:** Maintainability(Analysability)
+
+### NFR-18: Logging
+
+**Requirement:** The application shall generate centralized logs for failures and errors, structured for analysis.
+**Priority:** Should Have
+**ISO-25010:** Maintainability(Analysability)
+
+### NFR-19: User Moderation
+
+**Requirement:** The application shall include report features, to report players and events to mitigate harassment or unsafe gatherings.
+**Priority:** Could Have
+**ISO-25010:** Safety(Risk identification)
+
+### NFR-20: Camera/Storage Integration
+
+**Requirement:** The system shall access native camera for to take photographs and allow image upload directly from the device camera and storage.
+**Priority:** Must Have
+**ISO-25010:** Compatability(Interoperability)
+
+### NFR-21: Message encryption
+
+**Requirement:** The application shall have message End-to-end encryption, using at least AES-256
+**Priority:** Must Have
+**ISO-25010:** Security(Confidentiality, Integrity)
+
+### NFR-22: Calendar Service Integration
+
+**Requirement:** Application shall integrate with device calendar services, to export game events.
+**Priority:** Could Have
+**ISO-25010:** Compatability(Co-existence, Interoperability)
+
+
+
 ## Performance (PerfR)
 
 - how fast the system responds and processes work
@@ -163,122 +303,30 @@ url = {https://iso25000.com/index.php/en/iso-25000-standards/iso-25010}
 }
 
 
-# Non-Functional Requirements List
 
-### NFR-01: Offline Availability
 
-**Requirement:** The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
-**Priority:** Must Have
-**ISO-25010:** Reliability(Availability, Fault Tolerance)
+- [NFR-01] Offline Availability: The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
 
-### NFR-02: Data Consistency 
+- [NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
 
-**Requirement:** The application shall not data loss after a write operation, even if a crash or an unexpected termination occur.
-**Priority:** Must Have
-**ISO-25010:** Reliability(Faultlessness, Recoverability)
+- [NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
 
-### NFR-03: Graceful Degradation 
+- [NFR-05] Data Privacy (GDPR Compliance): The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
 
-**Requirement:** In case of a failed backend request, the application shall:
-1. Display cached data when available
-2. Show a clear, user-friendly error message
-3. Never crash or display technical error details to the user
-4. Allow retry when appropriate
-**Priority:** Should Have
-**ISO-25010:** Reliability(Fault Tolerance)
+- [NFR-07] Location Privacy: The application shall never expose to other users the user location coordinates, only hte location of the court should be shared publicly.
 
-### NFR-04: User Authentication 
+- [NFR-08] Learnability: The application shall enable new users to complete core tasks without prior training or documentation
 
-**Requirement:** The application shall allow users to authenticate via social login or email/password. 
-**Priority:** Must Have
-**ISO-25010:** Security(Authenticity, Confidentiality)
+- [NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.
 
-### NFR-05: Data Privacy (GDPR Compliance) 
+- [NFR-13] GPS Integration: The application shall integrate with device's native GPS/GNSS hardware for location services
 
-**Requirement:** The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
-**Priority:** Must Have
-**ISO-25010:** Security(Confidentiality, Integrity)
+- [NFR-14] Maps Service Integration: Application shall integrate with device maps services, to open maps court location.
 
-### NFR-06: Secure Data Transmission 
+- [NFR-19] User Moderation: The application shall generate centralized logs for failures and errors, structured for analysis.
 
-**Requirement:** The application shall transmit data between client and backend using HTTPS with TLS 1.3.
-**Priority:** Must Have
-**ISO-25010:** Security(Confidentiality, Integrity)
+- [NFR-20] Camera/Storage Integration: The system shall access native camera for to take photographs and allow image upload directly from the device camera and storage.
 
-### NFR-07: Location Privacy 
+- [NFR-21] Message Encryption: The application shall have message End-to-end encryption, using at least AES-256
 
-**Requirement:** The application shall never expose to other users the user location coordinates, only hte location of the court should be shared publicly.
-**Priority:** Must Have
-**ISO-25010:** Security(Confidentiality)
-
-### NFR-08: Learnability 
-
-**Requirement:** The application shall enable new users to complete core tasks without prior training or documentation
-**Priority:** Must Have
-**ISO-25010:** Interaction Capability(Learnability)
-
-### NFR-09: Error Feedback 
-
-**Requirement:** The application shall provide a clear, descriptive error message when a user action fails explaining why.
-**Priority:** Should Have
-**ISO-25010:** Interaction Capability(Self-descriptiveness, User error protection)
-
-### NFR-10: Outdoor Readability 
-
-**Requirement:** The application shall remain readable in outdoor sunlight conditions through high contrast UI and support for system dark/light modes.
-**Priority:** Could Have
-**ISO-25010:** Interaction Capability(Operability)
-
-### NFR-11: Cross-Platform Support 
-
-**Requirement:** The application shall run on both Android and iOS platform
-**Priority:** Must Have
-**ISO-25010:** Flexibility(Adaptability)
-
-### NFR-12: Screen Compatability
-
-**Requirement:** The application shall function correctly on devices with varying screen sizes and capabilities, for only phones.
-**Priority:** Should Have
-**ISO-25010:** Flexibility(Adaptability)
-
-### NFR-13: GPS Integration 
-
-**Requirement:** The application shall integrate with device's native GPS/GNSS hardware for location services
-**Priority:** Must Have
-**ISO-25010:** Compatability(Interoperability)
-
-### NFR-14: Device Services Integration 
-
-**Requirement:** Application shall integrate with device calendar and map services, to export game events and open court location.
-**Priority:** Could Have 
-**ISO-25010:** Compatability(Co-existence, Interoperability)
-
-### NFR-15: Code Modularity 
-
-**Requirement:** The application shall follow a clean architecture principles with separation between presentation, domain, and data layers. Changes to one module shall have minimal impact on others.
-**Priority:** Should Have
-**ISO-25010:** Maintainability(Modularity, Modifiability)
-
-### NFR-16: Testability
-
-**Requirement:** The application shall have unit test for core business logic. Acceptance test shall be written for user stories and followed a ATDD methodology.
-**Priority:** Should Have
-**ISO-25010:** Maintainability(Testability)
-
-### NFR-17: Documentation 
-
-**Requirement:** The application shall be complemented with documentation for APIs and business logic.
-**Priority:** Should Have
-**ISO-25010:** Maintainability(Analysability)
-
-### NFR-18: Logging 
-
-**Requirement:** The application shall generate centralized logs for failures and errors, structured for analysis.
-**Priority:** Should Have
-**ISO-25010:** Maintainability(Analysability)
-
-### NFR-19: User Moderation 
-
-**Requirement:** The application shall include report features, to report players and events to mitigate harassment or unsafe gatherings.
-**Priority:** Could Have
-**ISO-25010:** Safety(Risk identification)
+- [NFR-22] Calendar Service Integration: Application shall integrate with device calendar services, to export game events.
