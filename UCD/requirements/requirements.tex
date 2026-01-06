@@ -1,0 +1,1272 @@
+\documentclass[11pt,a4paper,oneside]{report}
+\usepackage[utf-8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{xfrac}
+\usepackage{enumitem}
+\usepackage{longtable}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{System Requirements Specification}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\small Basketball Court Management Platform}
+
+\definecolor{headercolor}{RGB}{41, 84, 209}
+\definecolor{priorityMust}{RGB}{220, 53, 69}
+\definecolor{priorityShould}{RGB}{255, 193, 7}
+\definecolor{priorityCould}{RGB}{23, 162, 184}
+
+\title{\textbf{System Requirements Specification}\\[0.5cm]
+    {\large Basketball Court Management Platform}\\[0.2cm]
+    {\normalsize Master's Dissertation}}
+\author{Mobile Application Development}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document presents a comprehensive specification of functional and non-functional requirements for a mobile basketball court management platform. The specification includes 31 functional requirements organized across 6 feature epics, and 21 non-functional requirements aligned with ISO/IEC 25010 quality standards. The requirements are structured using user-centered design principles, acceptance test-driven development (ATDD) methodology, and Agile practices.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% =====================================================================
+% CHAPTER 1: INTRODUCTION
+% =====================================================================
+\chapter{Introduction}
+
+\section{Purpose}
+This document provides a detailed specification of all functional and non-functional requirements for the basketball court management platform. It serves as the primary reference for software development, testing, and project management activities.
+
+\section{Scope}
+The system is a mobile application designed for amateur basketball players to organize casual games, discover courts, and build a competitive ranking system. The application will be developed for both Android and iOS platforms using cross-platform development technologies.
+
+\newpage
+
+% =====================================================================
+% CHAPTER 2: FUNCTIONAL REQUIREMENTS
+% =====================================================================
+\chapter{Functional Requirements/User Stories}
+
+From the personas and the user scenarios, functional requirements were gathered. The Functional requirements, also called User Stories, were organized into groups or, as called in Scrum, Epics.
+
+\section{Functional Requirements}
+
+\subsection{Functional Requirements/User Stories}
+
+From the personas and the user scenarios requirements where gather.
+The Functional requirements, also called User Stories were organised into three groups or, as called in Scrum, Epics.
+
+\subsubsection{Game Management (Epic PLY-5)}
+
+The Game Management module encompasses all features related to creating, discovering, joining, and managing basketball games.
+
+\textbf{FR-00: Create a Game}
+\label{fr:create-game}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-00 \\
+	\textbf{Title} & Create a Game \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to create a game with custom parameters, so that I can organize matches with specific settings and invite players.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item The user can select a court/location from a list or map
+	\item The user can set the date (must be today or future date)
+	\item The user can set the time for the game
+	\item The user can choose game format: 1v1, 2v2, 3v3, 4v4, or 5v5
+	\item The user can set visibility as Public or Private
+	\item The user can enable or disable ranked mode
+	\item The user can choose team formation: Random Teams or Manual Teams
+	\item The user can set target score between 11 and 21 points
+	\item The user can invite friends from friends list
+	\item Invited players receive in-app and push notifications
+	\item The user becomes the host automatically upon game creation
+	\item A confirmation message is displayed after successful game creation
+	\item The created game appears in the appropriate game lists
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-08 (Learnability), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-01: Respond to Game Invitation}
+\label{fr:respond-invitation}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-01 \\
+	\textbf{Title} & Respond to Game Invitation \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As a basketball player, I want to accept or decline game invitations, so that I can control which games I participate in.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can view all pending game invitations in a dedicated section
+	\item Each invitation displays complete game details
+	\item Users can accept an invitation with one action
+	\item Users can decline an invitation with one action
+	\item The host receives a notification when invitation is accepted or declined
+	\item Accepted invitations add the user to the game's player list
+	\item Declined invitations remove the user from pending invitations
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-02: Receive Game Notifications}
+\label{fr:game-notifications}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-02 \\
+	\textbf{Title} & Receive Game Notifications \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to receive notifications when games are created in my favorite courts, so that I can quickly join games that interest me.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users receive in-app notifications when a game is created at favorite courts
+	\item Users receive push notifications (if notification preferences allow)
+	\item Notifications include game details: court, time, date, format, and host
+	\item Notifications provide a direct link to the game details
+	\item Notifications are only sent to users who have enabled this notification type
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-03 (Graceful Degradation), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-03: Browse and Search Games}
+\label{fr:browse-games}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-03 \\
+	\textbf{Title} & Browse and Search Games \\
+	\textbf{Priority} & \colorbox{red!30}{Highest} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to browse and filter available games, so that I can find games that match my preferences.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can view all public games in a list or map view
+	\item Users can filter games by date (today, tomorrow, specific date)
+	\item Users can filter games by court/location
+	\item Users can filter games by ranked/unranked status
+	\item Users can filter games by format (1v1, 2v2, 3v3, 4v4, 5v5)
+	\item Search results display key game information: time, location, format, ranked status
+	\item Users can tap a game to view full details
+	\item The list updates in real-time when new games are created
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-03 (Graceful Degradation), NFR-08 (Learnability), NFR-13 (GPS Integration)
+
+\vspace{1cm}
+
+\textbf{FR-04: Request to Join Game}
+\label{fr:request-join}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-04 \\
+	\textbf{Title} & Request to Join Game \\
+	\textbf{Priority} & \colorbox{red!30}{Highest} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to request to join public games, so that I can participate in games organized by others.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can request to join any public game that isn't full
+	\item Users can request to join with their team
+	\item A join request button is clearly visible on the game details page
+	\item The game host receives a notification when someone requests to join
+	\item The user receives confirmation that their request was sent
+	\item Users can view the status of their pending join requests
+	\item Users can cancel their join request before the host responds
+	\item Users cannot send duplicate requests to the same game
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-08 (Learnability), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-05: Manage Join Requests and Players}
+\label{fr:manage-players}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-05 \\
+	\textbf{Title} & Manage Join Requests and Players \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel and game host, I want to accept or reject players requesting to join my game and manage players in game list, so that I can control who participates.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item The host can view all pending join requests in the game details
+	\item Each request shows the player's profile information and ranking
+	\item The host can accept a join request with one action
+	\item The host can reject a join request with one action
+	\item Accepted players are added to the game immediately
+	\item Accepted players receive a notification confirming they joined
+	\item Rejected players receive a notification that their request was declined
+	\item The game automatically closes to new requests when full
+	\item The host can move players from one team to another
+	\item The host can remove players in the list
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-06: Challenge Teams}
+\label{fr:challenge-teams}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-06 \\
+	\textbf{Title} & Challenge Teams \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel and a team member, I want to challenge other teams to a game, so that we can compete against organized opponents.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can search for teams to challenge
+	\item Users can send a challenge by specifying game parameters
+	\item All members of both teams receive notifications about the challenge
+	\item The challenged team can accept or decline
+	\item If accepted, a game is automatically created with both teams
+	\item If declined, both teams receive a notification
+	\item Challenges expire after 7 days if not responded to
+	\item The challenge team can change parameters
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-08 (Learnability), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-07: Start Game}
+\label{fr:start-game}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-07 \\
+	\textbf{Title} & Start Game \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel and game host, I want to start the game when all players arrive, so that we can begin playing and tracking the match.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item The host can start the game from the game details page
+	\item The start button is only enabled when game time has arrived
+	\item All players are checked in to the court when the game starts
+	\item The game status changes from 'Scheduled' to 'In Progress'
+	\item Option to end the game is enabled
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-07 (Location Privacy), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-08: End Game}
+\label{fr:end-game}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-08 \\
+	\textbf{Title} & End Game \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to end the match and record the final score and winning team, so that results are tracked for rankings and history.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Button to end the game only enabled if game is "In Progress"
+	\item Any player in the game can initiate ending the game
+	\item The user enters the final score for both teams
+	\item The system validates that the score matches game rules
+	\item At least one player from each team must confirm the result
+	\item If results conflict, all players are notified to resolve
+	\item Once confirmed, the game status changes to 'Completed'
+	\item The winning team is determined automatically based on score
+	\item Results are saved to game history immediately
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-09: Spectator Mode}
+\label{fr:spectator}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-09 \\
+	\textbf{Title} & Spectator Mode \\
+	\textbf{Priority} & \colorbox{cyan!30}{Low} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Carlos, I want to mark myself as watching a game and record the result, so that I can contribute to game accuracy even if I'm not playing.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can mark themselves as spectators for any in-progress game
+	\item Spectators can submit the final result
+	\item Spectator-submitted results require player confirmation
+	\item The game shows the number of spectators watching
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-07 (Location Privacy), NFR-09 (Error Feedback), NFR-13 (GPS Integration)
+
+\vspace{1cm}
+
+\textbf{FR-31: View Game Details}
+\label{fr:view-game-details}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-31 \\
+	\textbf{Title} & View Game Details \\
+	\textbf{Priority} & \colorbox{red!30}{Highest} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to view complete details of a game I'm in or interested in, so that I know when to show up, who's playing, and what to expect.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can view full game information from any game card or notification
+	\item Game details display: court name and address, date and time, format
+	\item Game details show: visibility (public/private), skill level, target score
+	\item Users can see the list of confirmed players
+	\item Host can see the list of pending join requests
+	\item Users can view which team they are in (if teams are set)
+	\item Users can see the game host's profile
+	\item Users can access the game chat (if participant)
+	\item The current game status is clearly displayed
+	\item Different actions are available based on user role
+	\item Host can start a game
+	\item Host can assign other player as host
+	\item Host has a button to edit information
+	\item Host can select to make teams when minimum players are in
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-03 (Graceful Degradation), NFR-05 (Data Privacy), NFR-09 (Error Feedback), NFR-22 (Calendar Service Integration)
+
+\newpage
+
+\subsubsection{Court Availability (Epic PLY-6)}
+
+The Court Availability module handles court discovery, management, occupancy tracking, and user check-ins.
+
+\textbf{FR-16: Court Check-In}
+\label{fr:court-checkin}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-16 \\
+	\textbf{Title} & Court Check-In \\
+	\textbf{Priority} & \colorbox{red!30}{Highest} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Carlos, I want to check in when I arrive at a court, so that others know I'm there.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can check in to a court from the court's page
+	\item Check-in uses GPS to find the nearest court
+	\item Users can manually select a court to check in if GPS is unavailable
+	\item Users appear in the list of players currently at the court if they agree to
+	\item Users can check out manually or are auto-checked-out after 4 hours
+	\item System sends notification to user's friends when they check in (if agreed)
+	\item Users cannot check in to more than one court simultaneously
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-05 (Data Privacy), NFR-07 (Location Privacy), NFR-08 (Learnability), NFR-13 (GPS Integration)
+
+\vspace{1cm}
+
+\textbf{FR-17: Court Occupancy Display}
+\label{fr:occupancy-display}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-17 \\
+	\textbf{Title} & Court Occupancy Display \\
+	\textbf{Priority} & \colorbox{red!30}{Highest} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Carlos, I want to see how many players are at each court, so that I can decide where to play.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Each court displays the current number of checked-in players
+	\item The occupancy count updates in real-time
+	\item Users can view a list of who is checked in at each court
+	\item The map view shows occupancy indicators on court markers
+	\item Historical occupancy patterns are displayed
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-03 (Graceful Degradation), NFR-08 (Learnability)
+
+\vspace{1cm}
+
+\textbf{FR-18: Add New Courts}
+\label{fr:add-courts}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-18 \\
+	\textbf{Title} & Add New Courts \\
+	\textbf{Priority} & \colorbox{blue!30}{Lowest} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Carlos, I want to add courts that aren't in the system, so that the app includes all court locations.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can add a new court by providing its location on a map
+	\item Users must provide court name and address
+	\item Users can specify number of hoops/courts available
+	\item Users can describe court conditions (indoor/outdoor, surface type, lighting)
+	\item Users can upload photos of the court (minimum 1, maximum 5)
+	\item New court submissions require admin approval before appearing publicly
+	\item Users receive notification when their court is approved or rejected
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-02 (Data Consistency), NFR-05 (Data Privacy), NFR-07 (Location Privacy), NFR-09 (Error Feedback), NFR-20 (Camera/Storage Integration)
+
+\vspace{1cm}
+
+\textbf{FR-19: Rate and Review Courts}
+\label{fr:rate-courts}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-19 \\
+	\textbf{Title} & Rate and Review Courts \\
+	\textbf{Priority} & \colorbox{cyan!30}{Low} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Carlos, I want to rate and review courts, so that others have accurate and updated information about court quality.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can rate courts on a 5-star scale
+	\item Users can write text reviews (10-500 characters)
+	\item Users can only review courts they've checked in to
+	\item Court pages display average rating
+	\item Reviews are sorted by most recent by default
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-20: Announce Playing Intentions}
+\label{fr:playing-intentions}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-20 \\
+	\textbf{Title} & Announce Playing Intentions \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to announce when I plan to play at a court, so that others can join me.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can set an intention with court, date, and time
+	\item Intentions appear on the court's page
+	\item Other users can see who plans to play in the next week
+	\item Intentions can be edited or cancelled
+	\item Users who shown intention receive notifications when others also show it
+	\item Intentions automatically are deleted when the time arrives
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-05 (Data Privacy), NFR-08 (Learnability), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-21: View Expected Court Availability}
+\label{fr:expected-availability}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-21 \\
+	\textbf{Title} & View Expected Court Availability \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Carlos, I want to see how many players plan to be at a court at specific times, so that I can plan my sessions better.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Court pages display a timeline showing expected occupancy
+	\item Expected occupancy is based on intentions and scheduled games
+	\item Users can view expected availability for today and the next 7 days
+	\item The timeline shows hourly breakdowns
+	\item Color coding indicates expected crowd levels
+	\item Users can tap time slots to see who plans to be there
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-03 (Graceful Degradation), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-30: View Court Details and Add to Favorites}
+\label{fr:court-details}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-30 \\
+	\textbf{Title} & View Court Details and Add to Favorites \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to view court details and add courts to my favorites, so that I can easily find courts I like and receive notifications about games there.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can view detailed information about any court
+	\item Court details include: name, address, hoops, surface type, lighting, conditions
+	\item Court details display average rating and recent reviews
+	\item Court details show current occupancy and upcoming games
+	\item Users can add a court to favorites with one tap
+	\item Users can remove a court from favorites
+	\item Users are limited to 5 favorite courts maximum
+	\item A visual indicator shows whether a court is already favorite
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-32: Search Courts}
+\label{fr:search-courts}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-32 \\
+	\textbf{Title} & Search Courts \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Carlos, I want to search for courts interactively and easily, so that I can find new courts to try out.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can search a court by location
+	\item Users can search the court by name
+	\item Users can filter courts by location
+	\item Users can filter courts by occupancy
+	\item Users can search for courts in a list or in a maps
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-03 (Graceful Degradation), NFR-07 (Location Privacy), NFR-08 (Learnability), NFR-09 (Error Feedback), NFR-13 (GPS Integration)
+
+\newpage
+
+\subsubsection{Players and Social Features (Epic PLY-7)}
+
+The Players and Social Features module encompasses player discovery, friendship management, communication, and player interactions.
+
+\textbf{FR-11: View Player Profiles}
+\label{fr:view-profiles}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-11 \\
+	\textbf{Title} & View Player Profiles \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to view other players' profiles, so that I can find potential teammates or opponents.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can access any player's profile by tapping their name
+	\item The profile displays the player's ranking
+	\item The profile shows game history with win/loss record
+	\item The profile displays favorite courts
+	\item Users can send friend requests from the profile page
+	\item User can challenge for a game from the profile page
+	\item Users can view shared game history with that player
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-05 (Data Privacy)
+
+\vspace{1cm}
+
+\textbf{FR-22: Send Friend Requests}
+\label{fr:send-friend-requests}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-22 \\
+	\textbf{Title} & Send Friend Requests \\
+	\textbf{Priority} & \colorbox{yellow!30}{Medium} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to add other players as friends, so that I can easily organize games with them and know when they are at the court.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can send friend requests from player profiles
+	\item Users can search for players by name or username to add
+	\item Users can send friend request by sharing a link
+	\item Users can add friends with a QR Code
+	\item The recipient receives in-app and push notifications
+	\item Users cannot send duplicate requests to the same person
+	\item Users can cancel sent requests that haven't been accepted
+	\item Pending sent requests are visible in a dedicated section
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-05 (Data Privacy), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-23: Respond to Friend Requests}
+\label{fr:respond-friend-requests}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-23 \\
+	\textbf{Title} & Respond to Friend Requests \\
+	\textbf{Priority} & \colorbox{yellow!30}{Medium} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to accept or decline friend requests, so that I can manage my friends list.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can view all pending friend requests in one place
+	\item Each request shows the sender's profile basic info
+	\item Users can accept a request with one tap
+	\item Users can decline a request with one tap
+	\item Accepting adds both users to each other's friends lists
+	\item The sender receives notification when their request is accepted
+	\item The sender receives notification when their request is declined
+	\item Accepted and Declined requests are removed from the pending list
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-05 (Data Privacy), NFR-09 (Error Feedback), NFR-18 (Logging)
+
+\vspace{1cm}
+
+\textbf{FR-24: Game Chat}
+\label{fr:game-chat}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-24 \\
+	\textbf{Title} & Game Chat \\
+	\textbf{Priority} & \colorbox{yellow!30}{Medium} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to chat with other players in my game, so that we can coordinate details and communicate.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Each game has a dedicated chat room
+	\item Only players in the game can access the chat
+	\item Messages are displayed in chronological order
+	\item Users receive notifications for new messages (if enabled)
+	\item Users can send text messages (up to 500 characters)
+	\item The host can disable chat if needed
+	\item Chat is deleted after game ends
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-05 (Data Privacy), NFR-06 (Secure Data Transmission), NFR-09 (Error Feedback), NFR-18 (Logging), NFR-21 (Message Encryption)
+
+\vspace{1cm}
+
+\textbf{FR-26: Search Players and Teams}
+\label{fr:search-players}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-26 \\
+	\textbf{Title} & Search Players and Teams \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to search for other players and teams, so that I can connect with them or issue challenges.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can search by player name or username
+	\item Users can switch between player search and team search
+	\item Search results are sorted by relevance by default
+	\item Users can filter players by favorite court
+	\item Users can filter players by ranking range
+	\item Search results display key information: name, ranking, favorite courts
+	\item Users can access profiles or send requests directly from search results
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-03 (Graceful Degradation), NFR-05 (Data Privacy), NFR-07 (Location Privacy), NFR-09 (Error Feedback), NFR-18 (Logging)
+
+\vspace{1cm}
+
+\textbf{FR-13: Rate Players}
+\label{fr:rate-players}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-13 \\
+	\textbf{Title} & Rate Players \\
+	\textbf{Priority} & \colorbox{yellow!30}{Medium} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to rate players I've played with, so that the community has better information about player behavior and skill.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can rate players they've played with after a game
+	\item Rating categories include: Skill Level, Sportsmanship, Punctuality
+	\item Ratings use a 5-star scale
+	\item Users can optionally add written comments
+	\item Ratings are anonymous
+	\item Player profiles display average ratings
+	\item Users cannot rate the same player multiple times for the same game
+	\item An option to rate players appear in the game view, after the game ends
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-09 (Error Feedback), NFR-18 (Logging)
+
+\newpage
+
+\subsubsection{Ranking and Team System (Epic PLY-8)}
+
+The Ranking and Team System module manages competitive ranking, team creation, and team-based competitions.
+
+\textbf{FR-10: Player Ranking System}
+\label{fr:ranking}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-10 \\
+	\textbf{Title} & Player Ranking System \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, a competitive player, I want to earn points for victories and see my ranking, so that I can track my progress and compete with others.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item All players on the winning team receive ranking points if game is ranked
+	\item Points awarded are based on game format and opponent rankings
+	\item The ranking table is updated immediately after game completion
+	\item Users can view their current ranking position
+	\item The ranking table shows top players generally and per court
+	\item Ranking points can only be earned in ranked games
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-02 (Data Consistency), NFR-03 (Graceful Degradation)
+
+\vspace{1cm}
+
+\textbf{FR-12: Team Management}
+\label{fr:team-management}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-12 \\
+	\textbf{Title} & Team Management \\
+	\textbf{Priority} & \colorbox{yellow!30}{Medium} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to create and manage teams, so that I can play regularly with the same group and compete in team rankings.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can create a team by providing a team name
+	\item Any team member can invite players to join the team
+	\item Invited players receive notifications and can accept or decline
+	\item Teams have their own ranking separate from individual rankings
+	\item Users can be members of multiple teams
+	\item Any player can remove members from the team
+	\item When creating a game, users can select a team
+	\item Teams have maximum 5 players
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-14: Tournament Creation}
+\label{fr:tournament}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-14 \\
+	\textbf{Title} & Tournament Creation \\
+	\textbf{Priority} & \colorbox{yellow!30}{Medium} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to create tournaments with multiple teams and rounds, so that I can run structured competitive events and include different players and teams.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can create a tournament by specifying name, date, and location
+	\item The organizer sets the size of the teams and the number of teams
+	\item The organizer selects tournament format
+	\item Only teams can register for the tournament, except if 1v1, only players can register
+	\item The system generates a tournament bracket automatically
+	\item The organizer can manually adjust games if needed
+	\item Results are tracked for each round
+	\item A tournament winner is determined and displayed
+	\item In the profile of the team and the player appears the statistics of the tournament
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-08 (Learnability), NFR-09 (Error Feedback)
+
+\newpage
+
+\subsubsection{User Profile and Settings (Epic PLY-9)}
+
+The User Profile and Settings module handles authentication, profile management, notification preferences, and user data.
+
+\textbf{FR-27: User Authentication}
+\label{fr:auth}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-27 \\
+	\textbf{Title} & User Authentication \\
+	\textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Carlos, I want to register, log in, and recover my password, so that I can securely access my account.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can register with email and password
+	\item Passwords must be at least 8 characters with letters and numbers
+	\item Users receive a verification email after registration
+	\item Users must verify email before full account access
+	\item Users can log in with email and password
+	\item Users can log in with Google or Facebook accounts
+	\item Users can request password reset via email
+	\item Password reset links expire after 24 hours
+	\item Users receive confirmation when password is changed
+	\item Failed login attempts are limited (5 attempts, then 15-minute lockout)
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-05 (Data Privacy), NFR-08 (Learnability), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-28: Profile Management}
+\label{fr:profile}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-28 \\
+	\textbf{Title} & Profile Management \\
+	\textbf{Priority} & \colorbox{yellow!30}{Medium} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Carlos, I want to edit my profile information, so that my details stay updated.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can edit their display name
+	\item Users can update their profile photo
+	\item Users can add or edit a bio (up to 200 characters)
+	\item Users can set favorite courts (up to 5)
+	\item Users can update their skill level (Beginner, Intermediate, Advanced, Pro)
+	\item Users can change their email (requires verification of new email)
+	\item Users can change their password (requires current password)
+	\item All changes are saved immediately
+	\item Users receive confirmation after successful updates
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-05 (Data Privacy), NFR-08 (Learnability), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-29: Notification Preferences}
+\label{fr:notifications}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-29 \\
+	\textbf{Title} & Notification Preferences \\
+	\textbf{Priority} & \colorbox{yellow!30}{Medium} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Carlos, I want to customize which notifications I receive, so that I only get alerts that matter to me.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can enable/disable push notifications globally
+	\item Users can toggle notifications for: New games at favorite courts
+	\item Users can toggle notifications for: Game invitations
+	\item Users can toggle notifications for: Friend requests
+	\item Users can toggle notifications for: Messages in game chat
+	\item Changes take effect immediately
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-05 (Data Privacy), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\textbf{FR-25: View Game History}
+\label{fr:history}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-25 \\
+	\textbf{Title} & View Game History \\
+	\textbf{Priority} & \colorbox{yellow!30}{Medium} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Miguel, I want to view my past games, so that I can track my playing activity and review results.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can access their complete game history from their profile
+	\item Games are listed with date, location, format, and result
+	\item Each game entry shows the final score and participating players
+	\item Users can tap a game to view full details
+	\item Statistics (total games, wins, losses, win rate) are calculated and shown
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-09 (Error Feedback)
+
+\newpage
+
+\subsubsection{Spontaneous Game Creation}
+
+\textbf{FR-15: Spontaneous Game Creation}
+\label{fr:spontaneous}
+
+\begin{tabular}{lp{10cm}}
+	\toprule
+	\textbf{Requirement ID} & FR-15 \\
+	\textbf{Title} & Spontaneous Game Creation \\
+	\textbf{Priority} & \colorbox{yellow!30}{Medium} \\
+	\textbf{Status} & To Do \\
+	\bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+	\textit{``As Carlos, while I am in the court, I want to quickly create an instant game, so that me and other player in the court can play without detailed planning, but still counting in the app.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Users can create a spontaneous game with minimal information
+	\item Location is auto-detected
+	\item Time defaults to 'now' or next available slot
+	\item Date defaults to today
+	\item Other parameters (format, ranked) can be set quickly or after the game
+	\item The game appears immediately in local game lists
+	\item The game can be started immediately when ready
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-07 (Location Privacy), NFR-08 (Learnability), NFR-09 (Error Feedback), NFR-13 (GPS Integration)
+
+\newpage
+
+\end{document}

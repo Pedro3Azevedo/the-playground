@@ -1,0 +1,243 @@
+\newpage
+
+\section{Non-Functional Requirements by ISO-25010 Category}
+
+\subsection{Reliability}
+
+\subsubsection{NFR-23: Session State Persistence}
+\label{nfr:session-persistence}
+
+\begin{tabular}{|l|p{10cm}|}
+	\hline
+	\textbf{ID} & NFR-23 \\
+	\hline
+	\textbf{Title} & Session State Persistence \\
+	\hline
+	\textbf{Requirement} & The application shall preserve the user's session state when the app is closed and reopened, allowing users to resume from where they left off without re-authentication. The session shall persist indefinitely until the user explicitly logs out. \\
+	\hline
+	\textbf{Priority} & \colorbox{priorityMust!30}{\textbf{Must Have}} \\
+	\hline
+	\textbf{ISO-25010} & Reliability (Recoverability) \\
+	\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item User remains logged in if app is closed and reopened
+	\item Login token is securely stored using device's secure storage (Keychain on iOS, Keystore on Android)
+	\item Last authenticated user is automatically restored on app launch
+	\item Session only ends when user explicitly logs out
+	\item User can view their profile and personal data immediately upon app reopening without additional authentication
+	\item Sensitive operations (changing password, deleting account) may require re-authentication
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\subsubsection{NFR-24: Data Sync on App Resume}
+\label{nfr:data-sync-resume}
+
+\begin{tabular}{|l|p{10cm}|}
+	\hline
+	\textbf{ID} & NFR-24 \\
+	\hline
+	\textbf{Title} & Data Sync on App Resume \\
+	\hline
+	\textbf{Requirement} & The application shall automatically synchronize data with the backend when resumed after being backgrounded. Data is considered fresh for 5 minutes; if more than 5 minutes have elapsed, a sync is triggered. Critical updates (new games, invitations, messages) trigger immediate sync regardless of time elapsed. \\
+	\hline
+	\textbf{Priority} & \colorbox{priorityShould!30}{\textbf{Should Have}} \\
+	\hline
+	\textbf{ISO-25010} & Reliability (Availability, Recoverability) \\
+	\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item When app is brought to foreground after being backgrounded, the last sync timestamp is checked
+	\item If more than 5 minutes have elapsed since last sync, automatic sync is triggered
+	\item New games, invitations, messages, and friend requests are fetched from backend
+	\item Data sync completes within 5 seconds on 4G connection
+	\item A sync indicator is displayed to the user during synchronization
+	\item If offline when resumed, app displays cached data and shows ``Offline - Last updated X minutes ago'' message
+	\item Once connection is restored, sync is automatically triggered
+	\item User can manually trigger refresh at any time via a refresh button
+	\item Sync errors are handled gracefully with user-friendly error messages
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\subsubsection{NFR-26: App Lifecycle Management}
+\label{nfr:app-lifecycle}
+
+\begin{tabular}{|l|p{10cm}|}
+	\hline
+	\textbf{ID} & NFR-26 \\
+	\hline
+	\textbf{Title} & App Lifecycle Management \\
+	\hline
+	\textbf{Requirement} & The application shall properly handle all app lifecycle events (launch, background, resume, destroy) to ensure data consistency, resource cleanup, and graceful state management. \\
+	\hline
+	\textbf{Priority} & \colorbox{priorityMust!30}{\textbf{Must Have}} \\
+	\hline
+	\textbf{ISO-25010} & Reliability (Faultlessness, Recoverability) \\
+	\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item App launch: User's last session is restored if still valid
+	\item App background: All pending data writes are flushed to local storage
+	\item App resume: Data sync is triggered if more than 5 minutes have elapsed
+	\item App destroy/termination: All resources (database connections, network requests, timers) are properly released
+	\item No data loss occurs when app is terminated unexpectedly
+	\item Open network requests are cancelled gracefully when app transitions to background
+	\item Database transactions are committed or rolled back appropriately
+	\item Location services are paused when app is backgrounded (if user hasn't opted for background location tracking)
+	\item No memory leaks are introduced by lifecycle state changes
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\subsubsection{NFR-27: Cache Invalidation Strategy}
+\label{nfr:cache-invalidation}
+
+\begin{tabular}{|l|p{10cm}|}
+	\hline
+	\textbf{ID} & NFR-27 \\
+	\hline
+	\textbf{Title} & Cache Invalidation Strategy \\
+	\hline
+	\textbf{Requirement} & The application shall implement a smart cache invalidation strategy where data is considered fresh for 5 minutes. Critical data updates from the server (new games, messages, friend requests) invalidate relevant cache entries immediately. \\
+	\hline
+	\textbf{Priority} & \colorbox{priorityShould!30}{\textbf{Should Have}} \\
+	\hline
+	\textbf{ISO-25010} & Reliability (Availability), Performance Efficiency (Time behaviour) \\
+	\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Each cached data item stores a timestamp of when it was last fetched
+	\item Data is considered fresh if timestamp is within the last 5 minutes
+	\item Stale data display is accompanied by a ``Last updated X minutes ago'' label
+	\item New games in favorite courts invalidate game list cache immediately
+	\item New messages/notifications invalidate all relevant caches
+	\item New friend requests invalidate friend request cache
+	\item Player ranking changes are reflected within 5 minutes or sooner if sync is triggered
+	\item Court occupancy updates are synced within 5 minutes of app resume
+	\item User can manually invalidate cache by pulling to refresh
+	\item Critical data (authentication tokens) are invalidated and sync is forced when user-initiated sync occurs
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\subsection{Interaction Capability}
+
+\subsubsection{NFR-25: UI State Preservation}
+\label{nfr:ui-state-preservation}
+
+\begin{tabular}{|l|p{10cm}|}
+	\hline
+	\textbf{ID} & NFR-25 \\
+	\hline
+	\textbf{Title} & UI State Preservation \\
+	\hline
+	\textbf{Requirement} & The application shall preserve user interface state (filters, search terms, scroll positions, form inputs) when the app is backgrounded and the process is not terminated. This state shall be restored when the app is reopened during the same session. \\
+	\hline
+	\textbf{Priority} & \colorbox{priorityShould!30}{\textbf{Should Have}} \\
+	\hline
+	\textbf{ISO-25010} & Interaction Capability (User Engagement), Flexibility (Adaptability) \\
+	\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Applied filters on game search (date, court, format, ranked status) are preserved when app is backgrounded
+	\item Search query text is preserved and restored
+	\item Scroll position in game lists and court lists is maintained to the exact position
+	\item Form inputs in game creation (selected court, date, time, format) that have not been submitted are preserved
+	\item Map zoom level and center position are preserved
+	\item Expanded/collapsed UI sections maintain their state
+	\item UI state is cleared when user explicitly logs out
+	\item If app process is terminated by the system, UI state is not restored (only session is restored)
+	\item Previously entered court or player search text in search bars is accessible via search history
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\subsubsection{NFR-29: Form State Recovery}
+\label{nfr:form-recovery}
+
+\begin{tabular}{|l|p{10cm}|}
+	\hline
+	\textbf{ID} & NFR-29 \\
+	\hline
+	\textbf{Title} & Form State Recovery \\
+	\hline
+	\textbf{Requirement} & The application shall recover form state when the app is backgrounded during form entry. If the app process is terminated, the user is notified that their form data was lost. \\
+	\hline
+	\textbf{Priority} & \colorbox{priorityShould!30}{\textbf{Should Have}} \\
+	\hline
+	\textbf{ISO-25010} & Interaction Capability (User error protection), Reliability (Recoverability) \\
+	\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item All form field values are saved to local storage before app is backgrounded
+	\item Form state is recovered when app is resumed during same session
+	\item Form input validation errors are preserved (so user knows which fields need attention)
+	\item Multi-step forms maintain progress when backgrounded and resumed
+	\item If app is force-stopped or process is terminated, form state is cleared
+	\item User sees a message: ``Your form was not saved. Please fill it again.'' when resuming after process termination
+	\item Sensitive form fields (passwords) are never persisted to local storage
+	\item File uploads in progress are preserved with progress indicator
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\subsection{Performance Efficiency}
+
+\subsubsection{NFR-28: Background Sync (Optional Enhancement)}
+\label{nfr:background-sync}
+
+\begin{tabular}{|l|p{10cm}|}
+	\hline
+	\textbf{ID} & NFR-28 \\
+	\hline
+	\textbf{Title} & Background Sync (Optional Enhancement) \\
+	\hline
+	\textbf{Requirement} & The application may implement periodic background synchronization to keep user data up-to-date even when the app is not actively in use. This is optional but recommended for improved user experience. \\
+	\hline
+	\textbf{Priority} & \colorbox{priorityCould!30}{\textbf{Could Have}} \\
+	\hline
+	\textbf{ISO-25010} & Reliability (Availability), Performance Efficiency (Resource utilization) \\
+	\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+	\item Background sync can be triggered periodically (e.g., every 30 minutes) if user opts in
+	\item Background sync respects battery and data usage constraints
+	\item Background sync is deferred or skipped if device is on low battery mode
+	\item Background sync only syncs if device is on WiFi or has sufficient cellular data allowance
+	\item Push notifications are used as primary mechanism for critical updates instead of relying on background sync
+	\item User can enable/disable background sync in notification preferences
+	\item Background sync does not impact foreground app performance
+	\item Background sync requests timeout after 30 seconds
+\end{enumerate}
+
+\vspace{0.5cm}

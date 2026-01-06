@@ -1,5 +1,29 @@
 Summary,Issue key,Issue id,Issue Type,Status,Project key,Project name,Project type,Project lead,Project lead id,Project description,Priority,Resolution,Assignee,Assignee Id,Reporter,Reporter Id,Creator,Creator Id,Created,Updated,Last Viewed,Resolved,Due date,Votes,Labels,Description,Environment,Watchers,Watchers Id,Original estimate,Remaining Estimate,Time Spent,Work Ratio,Σ Original Estimate,Σ Remaining Estimate,Σ Time Spent,Security Level,Custom field (Development),Custom field (Issue color),Custom field (Rank),Custom field (Start date),Custom field (Story point estimate),Custom field (Team),Custom field (Vulnerability),Parent,Parent key,Parent summary,Status Category,Status Category Changed
-FR-31: View Game Details,SCRUM-41,10165,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Highest,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 11:11 AM,24/Nov/25 11:11 AM,24/Nov/25 11:19 AM,,,0,,"*User Story:*
+Non-Functional Requirements,PLY-43,10200,Epic,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,27/Nov/25 2:53 PM,27/Nov/25 2:53 PM,27/Dec/25 4:05 PM,,,0,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},green,0|i0008f:,,,,,,,,To Do,27/Nov/25 2:53 PM
+FR-32: Search Courts,PLY-42,10199,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,27/Nov/25 10:21 AM,27/Nov/25 10:21 AM,27/Nov/25 10:21 AM,,,0,,"*User Story*:
+
+_As Carlos, I want to search for courts interactively and easily, so that I can find new courts to try out._
+
+*Acceptance Criteria:*
+
+* The users can search a court by location
+* The users can search the court by name
+* The users can filter the courts by location
+* The users can filter the court by occupancy
+* The users can search for courts in a list or in a maps
+
+*[NFR-01]* Offline Availability: The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+
+*[NFR-03]* Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+*[NFR-07]* Location Privacy: The application shall never expose to other users the user location coordinates, only hte location of the court should be shared publicly.
+
+*[NFR-08]* Learnability: The application shall enable new users to complete core tasks without prior training or documentation
+
+*[NFR-09]* Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.
+
+*[NFR-13]* GPS Integration: The application shall integrate with device's native GPS/GNSS hardware for location services",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00087:,,,,,10037,PLY-6,Court Availability,To Do,27/Nov/25 10:21 AM
+FR-31: View Game Details,PLY-41,10165,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Highest,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 11:11 AM,27/Nov/25 2:38 PM,27/Nov/25 10:24 AM,,,0,,"*User Story:*
 
 _As Miguel, I want to view complete details of a game I'm in or interested in, so that I know when to show up, who's playing, and what to expect._
 
@@ -18,8 +42,18 @@ _As Miguel, I want to view complete details of a game I'm in or interested in, s
 * Host can start a game
 * Host can assign other player as host
 * Host has a button to edit information
-* Host can select to make teams, when the min players are in",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0007z:,,,,,10036,SCRUM-5,Game Management ,To Do,24/Nov/25 11:11 AM
-FR-30: View Court Details and Add to Favorites,SCRUM-40,10163,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 11:05 AM,24/Nov/25 11:05 AM,,,,0,,"*User Story:*
+* Host can select to make teams, when the min players are in
+
+[NFR-01] Offline Availability: The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-05] Data Privacy (GDPR Compliance): The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.
+
+[NFR-22] Calendar Service Integration: Application shall integrate with device calendar services, to export game events.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0007z:,,,,,10036,PLY-5,Game Management ,To Do,24/Nov/25 11:11 AM
+FR-30: View Court Details and Add to Favorites,PLY-40,10163,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 11:05 AM,27/Nov/25 2:38 PM,27/Nov/25 2:38 PM,,,0,,"*User Story:*
 
 _As Miguel, I want to view court details and add courts to my favorites, so that I can easily find courts I like and receive notifications about games there._
 
@@ -33,8 +67,14 @@ _As Miguel, I want to view court details and add courts to my favorites, so that
 * Users can remove a court from favorites
 * Users can view all their favorite courts in their profile
 * Users are limited to 5 favorite courts maximum
-* A visual indicator shows whether a court is already favorite",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0007r:,,,,,10037,SCRUM-6,Court Availability,To Do,24/Nov/25 11:05 AM
-FR-29: Notification Preferences,SCRUM-39,10161,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 11:01 AM,24/Nov/25 11:01 AM,,,,0,,"*User Story:*
+* A visual indicator shows whether a court is already favorite
+
+[NFR-01] Offline Availability: The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.
+
+[NFR-14] Maps Service Integration: Application shall integrate with device maps services, to open maps court location.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0007r:,,,,,10037,PLY-6,Court Availability,To Do,24/Nov/25 11:05 AM
+FR-29: Notification Preferences,PLY-39,10161,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 11:01 AM,27/Nov/25 2:39 PM,27/Nov/25 2:38 PM,,,0,,"*User Story:*
 
 _As Carlos, I want to customize which notifications I receive, so that I only get alerts that matter to me._
 
@@ -45,8 +85,16 @@ _As Carlos, I want to customize which notifications I receive, so that I only ge
 * Users can toggle notifications for: Game invitations
 * Users can toggle notifications for: Friend requests
 * Users can toggle notifications for: Messages in game chat
-* Changes take effect immediately",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0007j:,,,,,10040,SCRUM-9,User Profile and Settings,To Do,24/Nov/25 11:01 AM
-FR-28: Profile Management,SCRUM-38,10159,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:58 AM,24/Nov/25 10:59 AM,24/Nov/25 10:59 AM,,,0,,"*User Story:*
+* Changes take effect immediately
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-05] Data Privacy (GDPR Compliance): The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0007j:,,,,,10040,PLY-9,User Profile and Settings,To Do,24/Nov/25 11:01 AM
+FR-28: Profile Management,PLY-38,10159,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:58 AM,27/Nov/25 2:39 PM,27/Nov/25 2:39 PM,,,0,,"*User Story:*
 
 _As Carlos, I want to edit my profile information, so that my details stay updated._
 
@@ -60,8 +108,16 @@ _As Carlos, I want to edit my profile information, so that my details stay updat
 * Users can change their email (requires verification of new email)
 * Users can change their password (requires current password)
 * All changes are saved immediately
-* Users receive confirmation after successful updates",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0007b:,,,,,10040,SCRUM-9,User Profile and Settings,To Do,24/Nov/25 10:58 AM
-FR-27: User Authentication,SCRUM-37,10157,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:48 AM,24/Nov/25 10:48 AM,,,,0,,"*User Story:*
+* Users receive confirmation after successful updates
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-05] Data Privacy (GDPR Compliance): The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
+
+[NFR-08] Learnability: The application shall enable new users to complete core tasks without prior training or documentation
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0007b:,,,,,10040,PLY-9,User Profile and Settings,To Do,24/Nov/25 10:58 AM
+FR-27: User Authentication,PLY-37,10157,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:48 AM,27/Nov/25 2:39 PM,27/Nov/25 2:39 PM,,,0,,"*User Story:*
 
 _As Carlos, I want to register, log in, and recover my password, so that I can securely access my account._
 
@@ -76,8 +132,16 @@ _As Carlos, I want to register, log in, and recover my password, so that I can s
 * Users can request password reset via email
 * Password reset links expire after 24 hours
 * Users receive confirmation when password is changed
-* Failed login attempts are limited (5 attempts, then 15-minute lockout)",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00073:,,,,,10040,SCRUM-9,User Profile and Settings,To Do,24/Nov/25 10:48 AM
-FR-26: Search Players and Teams,SCRUM-36,10155,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:45 AM,24/Nov/25 10:45 AM,,,,0,,"*User Story:*
+* Failed login attempts are limited (5 attempts, then 15-minute lockout)
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-05] Data Privacy (GDPR Compliance): The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
+
+[NFR-08] Learnability: The application shall enable new users to complete core tasks without prior training or documentation
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00073:,,,,,10040,PLY-9,User Profile and Settings,To Do,24/Nov/25 10:48 AM
+FR-26: Search Players and Teams,PLY-36,10155,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:45 AM,27/Nov/25 2:40 PM,27/Nov/25 2:40 PM,,,0,,"*User Story:*
 
 _As Miguel, I want to search for other players and teams, so that I can connect with them or issue challenges._
 
@@ -89,8 +153,18 @@ _As Miguel, I want to search for other players and teams, so that I can connect 
 * Users can filter players by favorite court
 * Users can filter players by ranking range
 * Search results display key information: name, ranking, favorite courts
-* Users can access profiles or send requests directly from search results",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0006v:,,,,,10038,SCRUM-7,Players and Social Features,To Do,24/Nov/25 10:45 AM
-FR-25: View Game History,SCRUM-35,10153,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:41 AM,24/Nov/25 10:42 AM,,,,0,,"*User Story:*
+* Users can access profiles or send requests directly from search results
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-05] Data Privacy (GDPR Compliance): The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
+
+[NFR-07] Location Privacy: The application shall never expose to other users the user location coordinates, only hte location of the court should be shared publicly.
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.
+
+[NFR-19] User Moderation: The application shall generate centralized logs for failures and errors, structured for analysis.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0006v:,,,,,10038,PLY-7,Players and Social Features,To Do,24/Nov/25 10:45 AM
+FR-25: View Game History,PLY-35,10153,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:41 AM,27/Nov/25 2:40 PM,27/Nov/25 2:40 PM,,,0,,"*User Story:*
 
 _As Miguel, I want to view my past games, so that I can track my playing activity and review results._
 
@@ -101,8 +175,15 @@ _As Miguel, I want to view my past games, so that I can track my playing activit
 * Each game entry shows the final score and participating players
 * Users can tap a game to view full details
 * Statistics (total games, wins, losses, win rate) are calculated and shown
-* ",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0006n:,,,,,10040,SCRUM-9,User Profile and Settings,To Do,24/Nov/25 10:41 AM
-FR-24: Game Chat,SCRUM-34,10152,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:39 AM,24/Nov/25 10:39 AM,,,,0,,"*User Story:*
+
+[NFR-01] Offline Availability: The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0006n:,,,,,10040,PLY-9,User Profile and Settings,To Do,24/Nov/25 10:41 AM
+FR-24: Game Chat,PLY-34,10152,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:39 AM,27/Nov/25 2:41 PM,27/Nov/25 2:40 PM,,,0,,"*User Story:*
 
 _As Miguel, I want to chat with other players in my game, so that we can coordinate details and communicate._
 
@@ -114,8 +195,24 @@ _As Miguel, I want to chat with other players in my game, so that we can coordin
 * Users receive notifications for new messages (if enabled)
 * Users can send text messages (up to 500 characters)
 * The host can disable chat if needed
-* Chat is deleted after game ends",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0006f:,,,,,10038,SCRUM-7,Players and Social Features,To Do,24/Nov/25 10:39 AM
-FR-23: Respond to Friend Requests,SCRUM-33,10150,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:36 AM,24/Nov/25 10:36 AM,,,,0,,"*User Story:*
+* Chat is deleted after game ends
+
+[NFR-01] Offline Availability: The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-05] Data Privacy (GDPR Compliance): The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
+
+[NFR-06] Secure Data Transmission: The application shall transmit data between client and backend using HTTPS with TLS 1.3.
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.
+
+[NFR-19] User Moderation: The application shall generate centralized logs for failures and errors, structured for analysis.
+
+[NFR-21] Message Encryption: The application shall have message End-to-end encryption, using at least AES-256",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0006f:,,,,,10038,PLY-7,Players and Social Features,To Do,24/Nov/25 10:39 AM
+FR-23: Respond to Friend Requests,PLY-33,10150,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:36 AM,27/Nov/25 2:41 PM,27/Nov/25 2:41 PM,,,0,,"*User Story:*
 
 _As Miguel, I want to accept or decline friend requests, so that I can manage my friends list._
 
@@ -128,8 +225,16 @@ _As Miguel, I want to accept or decline friend requests, so that I can manage my
 * Accepting adds both users to each other's friends lists
 * The sender receives notification when their request is accepted
 * The sender receives notification when their request is declined
-* Accepted and Declined requests are removed from the pending list",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00067:,,,,,10038,SCRUM-7,Players and Social Features,To Do,24/Nov/25 10:36 AM
-FR-22: Send Friend Requests,SCRUM-32,10148,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:34 AM,24/Nov/25 10:34 AM,,,,0,,"*User Story:*
+* Accepted and Declined requests are removed from the pending list
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-05] Data Privacy (GDPR Compliance): The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.
+
+[NFR-19] User Moderation: The application shall generate centralized logs for failures and errors, structured for analysis.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00067:,,,,,10038,PLY-7,Players and Social Features,To Do,24/Nov/25 10:36 AM
+FR-22: Send Friend Requests,PLY-32,10148,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,24/Nov/25 10:34 AM,27/Nov/25 2:42 PM,27/Nov/25 2:41 PM,,,0,,"*User Story:*
 
 _As Miguel, I want to add other players as friends, so that I can easily organize games with them and know when they are at the court._
 
@@ -143,8 +248,14 @@ _As Miguel, I want to add other players as friends, so that I can easily organiz
 * The recipient receives a push notification (if enabled)
 * Users cannot send duplicate requests to the same person
 * Users can cancel sent requests that haven't been accepted
-* Pending sent requests are visible in a dedicated section",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0005z:,,,,,10038,SCRUM-7,Players and Social Features,To Do,24/Nov/25 10:34 AM
-FR-21: View Expected Court Availability,SCRUM-31,10114,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 5:09 PM,23/Nov/25 5:09 PM,,,,0,,"*User Story:*
+* Pending sent requests are visible in a dedicated section
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-05] Data Privacy (GDPR Compliance): The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0005z:,,,,,10038,PLY-7,Players and Social Features,To Do,24/Nov/25 10:34 AM
+FR-21: View Expected Court Availability,PLY-31,10114,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 5:09 PM,27/Nov/25 2:42 PM,27/Nov/25 2:42 PM,,,0,,"*User Story:*
 
 _As Carlos, I want to see how many players plan to be at a court at specific times, so that I can plan my sessions better._
 
@@ -155,8 +266,14 @@ _As Carlos, I want to see how many players plan to be at a court at specific tim
 * Users can view expected availability for today and the next 7 days
 * The timeline shows hourly breakdowns
 * Color coding indicates expected crowd levels
-* Users can tap time slots to see who plans to be there",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0005r:,,,,,10037,SCRUM-6,Court Availability,To Do,23/Nov/25 5:09 PM
-FR-20: Announce Playing Intentions,SCRUM-30,10112,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 5:05 PM,23/Nov/25 5:05 PM,,,,0,,"*User Story:*
+* Users can tap time slots to see who plans to be there
+
+[NFR-01] Offline Availability: The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0005r:,,,,,10037,PLY-6,Court Availability,To Do,23/Nov/25 5:09 PM
+FR-20: Announce Playing Intentions,PLY-30,10112,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 5:05 PM,27/Nov/25 2:43 PM,27/Nov/25 2:43 PM,,,0,,"*User Story:*
 
 _As Miguel, I want to announce when I plan to play at a court, so that others can join me._
 
@@ -167,8 +284,16 @@ _As Miguel, I want to announce when I plan to play at a court, so that others ca
 * Other users can see who plans to play in the next week
 * Intentions can be edited or cancelled
 * Users who shown intention on going receive notifications when others also show it
-* Intentions automatically are deleted when the time arrives",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0005j:,,,,,10037,SCRUM-6,Court Availability,To Do,23/Nov/25 5:05 PM
-FR-19: Rate and Review Courts,SCRUM-29,10110,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Low,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:59 PM,23/Nov/25 4:59 PM,,,,0,,"*User Story:*
+* Intentions automatically are deleted when the time arrives
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-05] Data Privacy (GDPR Compliance): The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
+
+[NFR-08] Learnability: The application shall enable new users to complete core tasks without prior training or documentation
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0005j:,,,,,10037,PLY-6,Court Availability,To Do,23/Nov/25 5:05 PM
+FR-19: Rate and Review Courts,PLY-29,10110,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Low,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:59 PM,27/Nov/25 2:44 PM,27/Nov/25 2:43 PM,,,0,,"*User Story:*
 
 _As Carlos, I want to rate and review courts, so that others have accurate and updated information about court quality._
 
@@ -178,8 +303,14 @@ _As Carlos, I want to rate and review courts, so that others have accurate and u
 * Users can write text reviews (10-500 characters)
 * Users can only review courts they've checked in to
 * Court pages display average rating
-* Reviews are sorted by most recent by default",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0005b:,,,,,10037,SCRUM-6,Court Availability,To Do,23/Nov/25 4:59 PM
-FR-18: Add New Courts,SCRUM-28,10108,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Lowest,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:55 PM,23/Nov/25 4:55 PM,23/Nov/25 4:55 PM,,,0,,"*User Story:*
+* Reviews are sorted by most recent by default
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0005b:,,,,,10037,PLY-6,Court Availability,To Do,23/Nov/25 4:59 PM
+FR-18: Add New Courts,PLY-28,10108,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Lowest,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:55 PM,27/Nov/25 2:45 PM,27/Nov/25 2:44 PM,,,0,,"*User Story:*
 
 _As Carlos, I want to add courts that aren't in the system, so that the app includes all court locations._
 
@@ -191,8 +322,20 @@ _As Carlos, I want to add courts that aren't in the system, so that the app incl
 * Users can describe court conditions (indoor/outdoor, surface type, lighting)
 * Users can upload photos of the court (minimum 1, maximum 5)
 * New court submissions require admin approval before appearing publicly
-* Users receive notification when their court is approved or rejected",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00053:,,,,,10037,SCRUM-6,Court Availability,To Do,23/Nov/25 4:55 PM
-FR-17: Court Occupancy Display,SCRUM-27,10107,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Highest,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:53 PM,23/Nov/25 4:53 PM,,,,0,,"*User Story:*
+* Users receive notification when their court is approved or rejected
+
+[NFR-01] Offline Availability (only create, not publish): The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-05] Data Privacy (GDPR Compliance): The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
+
+[NFR-07] Location Privacy: The application shall never expose to other users the user location coordinates, only hte location of the court should be shared publicly.
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.
+
+[NFR-20] Camera/Storage Integration: The system shall access native camera for to take photographs and allow image upload directly from the device camera and storage.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00053:,,,,,10037,PLY-6,Court Availability,To Do,23/Nov/25 4:55 PM
+FR-17: Court Occupancy Display,PLY-27,10107,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Highest,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:53 PM,27/Nov/25 2:46 PM,27/Nov/25 2:45 PM,,,0,,"*User Story:*
 
 _As Carlos, I want to see how many players are at each court, so that I can decide where to play._
 
@@ -202,8 +345,14 @@ _As Carlos, I want to see how many players are at each court, so that I can deci
 * The occupancy count updates in real-time
 * Users can view a list of who is checked in at each court
 * The map view shows occupancy indicators on court markers
-* ???Historical occupancy patterns are displayed (e.g., 'Usually busy at this time')",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0004v:,,,,,10037,SCRUM-6,Court Availability,To Do,23/Nov/25 4:53 PM
-FR-16: Court Check-In,SCRUM-26,10105,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Highest,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:48 PM,23/Nov/25 4:48 PM,,,,0,,"*User Story:*
+* ???Historical occupancy patterns are displayed (e.g., 'Usually busy at this time')
+
+[NFR-01] Offline Availability: The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-08] Learnability: The application shall enable new users to complete core tasks without prior training or documentation",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0004v:,,,,,10037,PLY-6,Court Availability,To Do,23/Nov/25 4:53 PM
+FR-16: Court Check-In,PLY-26,10105,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Highest,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:48 PM,27/Nov/25 2:46 PM,27/Nov/25 2:46 PM,,,0,,"*User Story:*
 
 _As Carlos, I want to check in when I arrive at a court, so that others know I'm there._
 
@@ -215,8 +364,18 @@ _As Carlos, I want to check in when I arrive at a court, so that others know I'm
 * Users appear in the list of players currently at the court if they agree to
 * Users can check out manually or are auto-checked-out after 4 hour
 * The system sends notification to the user’s friends when they check in, if they agree to 
-* Users cannot check in to more than one court, or more than once in the same court",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0004n:,,,,,10037,SCRUM-6,Court Availability,To Do,23/Nov/25 4:48 PM
-FR-15: Spontaneous Game Creation,SCRUM-25,10103,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:26 PM,23/Nov/25 4:38 PM,23/Nov/25 4:38 PM,,,0,,"*User Story:*
+* Users cannot check in to more than one court, or more than once in the same court
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-05] Data Privacy (GDPR Compliance): The application shall comply with GDPR requirements such as explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real time search, not stored long term.
+
+[NFR-07] Location Privacy: The application shall never expose to other users the user location coordinates, only hte location of the court should be shared publicly.
+
+[NFR-08] Learnability: The application shall enable new users to complete core tasks without prior training or documentation
+
+[NFR-13] GPS Integration: The application shall integrate with device's native GPS/GNSS hardware for location services",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0004n:,,,,,10037,PLY-6,Court Availability,To Do,23/Nov/25 4:48 PM
+FR-15: Spontaneous Game Creation,PLY-25,10103,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:26 PM,27/Nov/25 2:47 PM,27/Nov/25 2:47 PM,,,0,,"*User Story:*
 
 _As Carlos, while I am in the court, I want to quickly create an instant game, so that me and other player in the court can play without detailed planning, but still counting in the app._
 
@@ -228,8 +387,20 @@ _As Carlos, while I am in the court, I want to quickly create an instant game, s
 * Date defaults to today
 * Other parameters (format, ranked) can be set quickly or after the game
 * The game appears immediately in local game lists
-* The game can be started immediately when ready",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0004f:,,,,,10036,SCRUM-5,Game Management ,To Do,23/Nov/25 4:26 PM
-FR-14: Tournament Creation,SCRUM-24,10101,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:21 PM,23/Nov/25 4:33 PM,23/Nov/25 4:21 PM,,,0,,"*User Story:*
+* The game can be started immediately when ready
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-07] Location Privacy: The application shall never expose to other users the user location coordinates, only hte location of the court should be shared publicly.
+
+[NFR-08] Learnability: The application shall enable new users to complete core tasks without prior training or documentation.
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.
+
+[NFR-13] GPS Integration: The application shall integrate with device's native GPS/GNSS hardware for location services",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0004f:,,,,,10036,PLY-5,Game Management ,To Do,23/Nov/25 4:26 PM
+FR-14: Tournament Creation,PLY-24,10101,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:21 PM,27/Nov/25 2:47 PM,27/Nov/25 2:47 PM,,,0,,"*User Story:*
 
 _As Miguel, I want to create tournaments with multiple teams and rounds, so that I can run structured competitive events and include different players and teams._
 
@@ -243,8 +414,18 @@ _As Miguel, I want to create tournaments with multiple teams and rounds, so that
 * The organizer can manually adjust games if needed
 * Results are tracked for each round
 * A tournament winner is determined and displayed
-* In the profile of the team and the player appears the statistics of the tournament (wins and participation ",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00047:,,,,,10036,SCRUM-5,Game Management ,To Do,23/Nov/25 4:21 PM
-FR-13: Rate Players,SCRUM-23,10100,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:13 PM,23/Nov/25 4:13 PM,,,,0,,"*User Story:*
+* In the profile of the team and the player appears the statistics of the tournament (wins and participation 
+
+[NFR-01] Offline Availability (can create but not publish): The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-08] Learnability: The application shall enable new users to complete core tasks without prior training or documentation
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00047:,,,,,10036,PLY-5,Game Management ,To Do,23/Nov/25 4:21 PM
+FR-13: Rate Players,PLY-23,10100,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:13 PM,27/Nov/25 2:47 PM,27/Nov/25 2:47 PM,,,0,,"*User Story:*
 
 _As Miguel, I want to rate players I've played with, so that the community has better information about player behavior and skill._
 
@@ -257,8 +438,14 @@ _As Miguel, I want to rate players I've played with, so that the community has b
 * Ratings are anonymous
 * Player profiles display average ratings
 * Users cannot rate the same player multiple times for the same game
-* An option to rate players appear in the game view, after the game ends",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0003z:,,,,,10038,SCRUM-7,Players and Social Features,To Do,23/Nov/25 4:13 PM
-FR-12: Team Management,SCRUM-22,10098,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:10 PM,23/Nov/25 4:10 PM,,,,0,,"*User Story:* 
+* An option to rate players appear in the game view, after the game ends
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.
+
+[NFR-19] User Moderation: The application shall generate centralized logs for failures and errors, structured for analysis.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0003z:,,,,,10038,PLY-7,Players and Social Features,To Do,23/Nov/25 4:13 PM
+FR-12: Team Management,PLY-22,10098,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,23/Nov/25 4:10 PM,27/Nov/25 2:48 PM,27/Nov/25 2:48 PM,,,0,,"*User Story:* 
 
 _As Miguel, I want to create and manage teams, so that I can play regularly with the same group and compete in team rankings._
 
@@ -271,8 +458,14 @@ _As Miguel, I want to create and manage teams, so that I can play regularly with
 * Users can be members of multiple teams
 * Any player can remove members from the team
 * When creating a game, users can select a team
-* Teams have maximum 5 players",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0003r:,,,,,10039,SCRUM-8,Ranking and Team System,To Do,23/Nov/25 4:10 PM
-FR-11: View Player Profiles,SCRUM-21,10064,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 1:11 PM,21/Nov/25 1:11 PM,,,,0,,"*User Story:*
+* Teams have maximum 5 players
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0003r:,,,,,10039,PLY-8,Ranking and Team System,To Do,23/Nov/25 4:10 PM
+FR-11: View Player Profiles,PLY-21,10064,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 1:11 PM,27/Nov/25 2:48 PM,27/Nov/25 2:48 PM,,,0,,"*User Story:*
 
 _As Miguel, I want to view other players' profiles, so that I can find potential teammates or opponents._
 
@@ -284,8 +477,12 @@ _As Miguel, I want to view other players' profiles, so that I can find potential
 * The profile displays favorite courts
 * Users can send friend requests from the profile page
 * User can challenge for a game from the profile page
-* Users can view shared game history with that player",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0003j:,,,,,10038,SCRUM-7,Players and Social Features,To Do,21/Nov/25 1:11 PM
-FR-10: Player Ranking System,SCRUM-20,10062,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 1:08 PM,21/Nov/25 1:08 PM,,,,0,,"*User Story:*
+* Users can view shared game history with that player
+
+[NFR-01] Offline Availability: The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+
+[NFR-05] Data Privacy (GDPR Compliance): The application shall comply with GDPR requirements such as explicit user consent before data collect",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0003j:,,,,,10038,PLY-7,Players and Social Features,To Do,21/Nov/25 1:11 PM
+FR-10: Player Ranking System,PLY-20,10062,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 1:08 PM,27/Nov/25 2:48 PM,27/Nov/25 2:48 PM,,,0,,"*User Story:*
 
 _As Miguel, a competitive player, I want to earn points for victories and see my ranking, so that I can track my progress and compete with others._
 
@@ -296,8 +493,14 @@ _As Miguel, a competitive player, I want to earn points for victories and see my
 * The ranking table is updated immediately after game completion
 * Users can view their current ranking position
 * The ranking table shows top players generally and per court (only count the games played in that court?)
-* Ranking points can only be earned in ranked games",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0003b:,,,,,10039,SCRUM-8,Ranking and Team System,To Do,21/Nov/25 1:08 PM
-FR-09: Spectator Mode,SCRUM-19,10060,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Low,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 1:03 PM,21/Nov/25 1:03 PM,,,,0,,"*User Story:* 
+* Ranking points can only be earned in ranked games
+
+[NFR-01] Offline Availability: The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0003b:,,,,,10039,PLY-8,Ranking and Team System,To Do,21/Nov/25 1:08 PM
+FR-09: Spectator Mode,PLY-19,10060,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Low,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 1:03 PM,27/Nov/25 2:48 PM,27/Nov/25 2:48 PM,,,0,,"*User Story:* 
 
 _As Carlos, I want to mark myself as watching a game and record the result, so that I can contribute to game accuracy even if I'm not playing._
 
@@ -306,8 +509,18 @@ _As Carlos, I want to mark myself as watching a game and record the result, so t
 * Users can mark themselves as spectators for any in-progress game
 * Spectators can submit the final result (maybe live result?)
 * Spectator-submitted results require player confirmation
-* The game shows the number of spectators watching",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00033:,,,,,10036,SCRUM-5,Game Management ,To Do,21/Nov/25 1:03 PM
-FR-08: End Game,SCRUM-18,10058,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 1:00 PM,21/Nov/25 1:00 PM,,,,0,,"*User Story:* 
+* The game shows the number of spectators watching
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-07] Location Privacy: The application shall never expose to other users the user location coordinates, only hte location of the court should be shared publicly.
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.
+
+[NFR-13] GPS Integration: The application shall integrate with device's native GPS/GNSS hardware for location services",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00033:,,,,,10036,PLY-5,Game Management ,To Do,21/Nov/25 1:03 PM
+FR-08: End Game,PLY-18,10058,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 1:00 PM,27/Nov/25 2:49 PM,27/Nov/25 2:48 PM,,,0,,"*User Story:* 
 
 _As Miguel, I want to end the match and record the final score and winning team, so that results are tracked for rankings and history._
 
@@ -321,8 +534,14 @@ _As Miguel, I want to end the match and record the final score and winning team,
 * If results conflict, all players are notified to resolve (TODO think conflict resolution)
 * Once confirmed, the game status changes to 'Completed'
 * The winning team is determined automatically based on score
-* Results are saved to game history immediately",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0002v:,,,,,10036,SCRUM-5,Game Management ,To Do,21/Nov/25 1:00 PM
-FR-07: Start Game,SCRUM-17,10056,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:55 PM,21/Nov/25 1:00 PM,,,,0,,"*User Story:*
+* Results are saved to game history immediately
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0002v:,,,,,10036,PLY-5,Game Management ,To Do,21/Nov/25 1:00 PM
+FR-07: Start Game,PLY-17,10056,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:55 PM,27/Nov/25 2:49 PM,27/Nov/25 2:49 PM,,,0,,"*User Story:*
 
 _As Miguel and game host, I want to start the game when all players arrive, so that we can begin playing and tracking the match._
 
@@ -332,8 +551,16 @@ _As Miguel and game host, I want to start the game when all players arrive, so t
 * The start button is only enabled when game time has arrived (time can be ajusted)
 * All players are checked in to the court when the game starts
 * The game status changes from 'Scheduled' to 'In Progress'
-* Option to end the game is enable",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0002n:,,,,,10036,SCRUM-5,Game Management ,To Do,21/Nov/25 12:55 PM
-FR-06: Challenge Teams,SCRUM-16,10054,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:51 PM,21/Nov/25 12:52 PM,21/Nov/25 12:52 PM,,,0,,"*User Story:* 
+* Option to end the game is enable
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-07] Location Privacy: The application shall never expose to other users the user location coordinates, only hte location of the court should be shared publicly.
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0002n:,,,,,10036,PLY-5,Game Management ,To Do,21/Nov/25 12:55 PM
+FR-06: Challenge Teams,PLY-16,10054,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:51 PM,27/Nov/25 2:49 PM,27/Nov/25 2:49 PM,,,0,,"*User Story:* 
 
 _As Miguel and a team member, I want to challenge other teams to a game, so that we can compete against organized opponents._
 
@@ -347,8 +574,16 @@ _As Miguel and a team member, I want to challenge other teams to a game, so that
 * If declined, both teams receive a notification
 * Challenges expire after 7 days if not responded to
 * The challenge team can change parameters (including number of players, in case one member cannot play)
-* Notification to the teams members is sent with new parameters",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0002f:,,,,,10036,SCRUM-5,Game Management ,To Do,21/Nov/25 12:51 PM
-FR-05: Manage Join Requests and Players,SCRUM-15,10052,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:43 PM,21/Nov/25 12:43 PM,,,,0,,"*User Story:*
+* Notification to the teams members is sent with new parameters
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-08] Learnability: The application shall enable new users to complete core tasks without prior training or documentation
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0002f:,,,,,10036,PLY-5,Game Management ,To Do,21/Nov/25 12:51 PM
+FR-05: Manage Join Requests and Players,PLY-15,10052,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:43 PM,27/Nov/25 2:50 PM,27/Nov/25 2:49 PM,,,0,,"*User Story:*
 
 _As Miguel and game host, I want to accept or reject players requesting to join my game and manage players in game list, so that I can control who participates._
 
@@ -363,8 +598,14 @@ _As Miguel and game host, I want to accept or reject players requesting to join 
 * Rejected players receive a notification that their request was declined
 * The game automatically closes to new requests when full
 * The host can move players from one team to another
-* The host can remove players in the list",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00027:,,,,,10036,SCRUM-5,Game Management ,To Do,21/Nov/25 12:43 PM
-FR-04: Request to Join Game,SCRUM-14,10050,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Highest,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:37 PM,21/Nov/25 12:44 PM,21/Nov/25 12:44 PM,,,0,,"*User Story:*
+* The host can remove players in the list
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00027:,,,,,10036,PLY-5,Game Management ,To Do,21/Nov/25 12:43 PM
+FR-04: Request to Join Game,PLY-14,10050,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Highest,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:37 PM,27/Nov/25 2:50 PM,27/Nov/25 2:50 PM,,,0,,"*User Story:*
 
 _As Miguel, I want to request to join public games, so that I can participate in games organized by others._
 
@@ -377,8 +618,14 @@ _As Miguel, I want to request to join public games, so that I can participate in
 * The user receives confirmation that their request was sent
 * Users can view the status of their pending join requests
 * Users can cancel their join request before the host responds
-* Users cannot send duplicate requests to the same game",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0001z:,,,,,10036,SCRUM-5,Game Management ,To Do,21/Nov/25 12:37 PM
-FR-03: Browse and search games,SCRUM-13,10048,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Highest,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:34 PM,21/Nov/25 12:34 PM,,,,0,,"*User Story:* 
+* Users cannot send duplicate requests to the same game
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-08] Learnability: The application shall enable new users to complete core tasks without prior training or documentation
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0001z:,,,,,10036,PLY-5,Game Management ,To Do,21/Nov/25 12:37 PM
+FR-03: Browse and search games,PLY-13,10048,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Highest,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:34 PM,27/Nov/25 2:50 PM,27/Nov/25 2:50 PM,,,0,,"*User Story:* 
 
 _As Miguel, I want to browse and filter available games, so that I can find games that match my preferences._
 
@@ -391,8 +638,16 @@ _As Miguel, I want to browse and filter available games, so that I can find game
 * Users can filter games by format (1v1, 2v2, 3v3, 4v4, 5v5)
 * The search results display key game information: time, location, format, ranked status
 * Users can tap a game to view full details
-* The list updates in real-time when new games are created",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0001r:,,,,,10036,SCRUM-5,Game Management ,To Do,21/Nov/25 12:34 PM
-FR-01: Respond to game invitation,SCRUM-12,10046,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:29 PM,21/Nov/25 12:29 PM,21/Nov/25 12:45 PM,,,0,,"*User Story:*
+* The list updates in real-time when new games are created
+
+[NFR-01] Offline Availability: The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-08] Learnability: The application shall enable new users to complete core tasks without prior training or documentation
+
+[NFR-13] GPS Integration: The application shall integrate with device's native GPS/GNSS hardware for location services",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0001r:,,,,,10036,PLY-5,Game Management ,To Do,21/Nov/25 12:34 PM
+FR-01: Respond to game invitation,PLY-12,10046,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:29 PM,27/Nov/25 2:51 PM,27/Nov/25 2:50 PM,,,0,,"*User Story:*
 
 _As a basketball player, I want to accept or decline game invitations, so that I can control which games I participate in._
 
@@ -404,8 +659,14 @@ _As a basketball player, I want to accept or decline game invitations, so that I
 * Users can decline an invitation with one action
 * The host receives a notification when their invitation is accepted or declined
 * Accepted invitations add the user to the game's player list
-* Declined invitations remove the user from pending invitations",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0001j:,,,,,10036,SCRUM-5,Game Management ,To Do,21/Nov/25 12:29 PM
-FR-02: Receive Game Notifications,SCRUM-11,10044,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:24 PM,21/Nov/25 12:29 PM,21/Nov/25 12:29 PM,,,0,,"*User Story:*
+* Declined invitations remove the user from pending invitations
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0001j:,,,,,10036,PLY-5,Game Management ,To Do,21/Nov/25 12:29 PM
+FR-02: Receive Game Notifications,PLY-11,10044,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 12:24 PM,27/Nov/25 2:51 PM,27/Nov/25 2:51 PM,,,0,,"*User Story:*
 
 _As Miguel, I want to receive notifications when games are created in my favorite courts, so that I can quickly join games that interest me._
 
@@ -417,12 +678,10 @@ _As Miguel, I want to receive notifications when games are created in my favorit
 * Notifications provide a direct link to the game details
 * Notifications are only sent to users who have enabled this notification type
 
-*Dependencies*
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
 
-* FR-28: Profile Settings (add favorite courts) - link
-* FR-X: See court details and add to favorites - link
-* FR-29: Notification Preferences  - link",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0001b:,,,,,10036,SCRUM-5,Game Management ,To Do,21/Nov/25 12:24 PM
-FR-00: Create a Game,SCRUM-10,10042,Story,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 11:38 AM,21/Nov/25 11:56 AM,21/Nov/25 11:51 AM,,,0,Must-Have,"*User Story:*
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i0001b:,,,,,10036,PLY-5,Game Management ,To Do,21/Nov/25 12:24 PM
+FR-00: Create a Game,PLY-10,10042,Story,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,High,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 11:38 AM,27/Nov/25 2:51 PM,05/Dec/25 3:24 PM,,,0,Must-Have,"*User Story:*
 
 _As Miguel, I want to create a game with custom parameters, so that I can organize matches with specific settings and invite players._
 
@@ -445,9 +704,19 @@ _As Miguel, I want to create a game with custom parameters, so that I can organi
 * Invited players receive push notifications (if enabled)
 * The user becomes the host automatically upon game creation
 * A confirmation message is displayed after successful game creation
-* The created game appears in the appropriate game lists (public/private)",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00013:,,,,,10036,SCRUM-5,Game Management ,To Do,21/Nov/25 11:38 AM
-User Profile and Settings,SCRUM-9,10040,Epic,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 11:24 AM,21/Nov/25 11:39 AM,21/Nov/25 11:39 AM,,,0,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},yellow,0|i0000v:,,,,,,,,To Do,21/Nov/25 11:24 AM
-Ranking and Team System,SCRUM-8,10039,Epic,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 11:24 AM,21/Nov/25 11:39 AM,21/Nov/25 11:39 AM,,,0,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},green,0|i0000n:,,,,,,,,To Do,21/Nov/25 11:24 AM
-Players and Social Features,SCRUM-7,10038,Epic,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 11:23 AM,21/Nov/25 11:39 AM,21/Nov/25 11:39 AM,,,0,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},blue,0|i0000f:,,,,,,,,To Do,21/Nov/25 11:23 AM
-Court Availability,SCRUM-6,10037,Epic,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 11:19 AM,21/Nov/25 11:19 AM,21/Nov/25 11:39 AM,,,0,,"Allow users to create, edit courts, add reviews, see availability, check in and out and give intention on going",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},teal,0|i00007:,,,,,,,,To Do,21/Nov/25 11:19 AM
-Game Management ,SCRUM-5,10036,Epic,To Do,SCRUM,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 10:54 AM,21/Nov/25 10:54 AM,21/Nov/25 11:27 AM,,,0,,"Enable users to create games, join, manage. Everything related with the Games",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},purple,0|hzzzzz:,,,,,,,,To Do,21/Nov/25 10:54 AM
+* The created game appears in the appropriate game lists (public/private)
+
+[NFR-01] Offline Availability (can create but not publish): The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp.
+
+[NFR-02] Data Consistency: The application shall not lose data after a write operation, even if a crash or an unexpected termination occur.
+
+[NFR-03] Graceful Degradation: In case of a failed backend request, the application shall, display cached data when available, show a clear, user-friendly error message, Never crash or display technical error details to the user, allow retry when appropriate
+
+[NFR-08] Learnability: The application shall enable new users to complete core tasks without prior training or documentation
+
+[NFR-09] Error Feedback: The application shall provide a clear, descriptive error message when a user action fails explaining why.",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},,0|i00013:,,,,,10036,PLY-5,Game Management ,To Do,21/Nov/25 11:38 AM
+User Profile and Settings,PLY-9,10040,Epic,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 11:24 AM,21/Nov/25 11:39 AM,21/Nov/25 11:39 AM,,,0,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},yellow,0|i0000v:,,,,,,,,To Do,21/Nov/25 11:24 AM
+Ranking and Team System,PLY-8,10039,Epic,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 11:24 AM,21/Nov/25 11:39 AM,21/Nov/25 11:39 AM,,,0,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},green,0|i0000n:,,,,,,,,To Do,21/Nov/25 11:24 AM
+Players and Social Features,PLY-7,10038,Epic,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 11:23 AM,21/Nov/25 11:39 AM,21/Nov/25 11:39 AM,,,0,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},blue,0|i0000f:,,,,,,,,To Do,21/Nov/25 11:23 AM
+Court Availability,PLY-6,10037,Epic,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 11:19 AM,21/Nov/25 11:19 AM,21/Nov/25 11:39 AM,,,0,,"Allow users to create, edit courts, add reviews, see availability, check in and out and give intention on going",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},teal,0|i00007:,,,,,,,,To Do,21/Nov/25 11:19 AM
+Game Management ,PLY-5,10036,Epic,To Do,PLY,Dissertation - the playground,software,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Your first project,Medium,,,,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,21/Nov/25 10:54 AM,21/Nov/25 10:54 AM,21/Nov/25 11:27 AM,,,0,,"Enable users to create games, join, manage. Everything related with the Games",,Pedro Azevedo,712020:bdfb6f22-2823-4a0d-8395-4123d1965d6d,,,,,,,,,{},purple,0|hzzzzz:,,,,,,,,To Do,21/Nov/25 10:54 AM

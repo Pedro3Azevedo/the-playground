@@ -1,0 +1,1071 @@
+\documentclass[11pt,a4paper,oneside]{report}
+\usepackage[utf-8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{tocloft}
+\usepackage{listings}
+\usepackage{xfrac}
+\usepackage{enumitem}
+\usepackage{longtable}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{System Requirements Specification}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{\small Basketball Court Management Platform}
+
+\definecolor{headercolor}{RGB}{41, 84, 209}
+\definecolor{priorityMust}{RGB}{220, 53, 69}
+\definecolor{priorityShould}{RGB}{255, 193, 7}
+\definecolor{priorityCould}{RGB}{23, 162, 184}
+
+\title{\textbf{System Requirements Specification}\\[0.5cm]
+    {\large Basketball Court Management Platform}\\[0.2cm]
+    {\normalsize Master's Dissertation}}
+\author{Mobile Application Development}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This document presents a comprehensive specification of functional and non-functional requirements for a mobile basketball court management platform. The specification includes 31 functional requirements organized across 6 feature epics, and 21 non-functional requirements aligned with ISO/IEC 25010 quality standards. The requirements are structured using user-centered design principles, acceptance test-driven development (ATDD) methodology, and Agile practices.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+% =====================================================================
+% SECTION 1: INTRODUCTION
+% =====================================================================
+\chapter{Introduction}
+
+\section{Purpose}
+This document provides a detailed specification of all functional and non-functional requirements for the basketball court management platform. It serves as the primary reference for software development, testing, and project management activities.
+
+\section{Scope}
+The system is a mobile application designed for amateur basketball players to organize casual games, discover courts, and build a competitive ranking system. The application will be developed for both Android and iOS platforms using cross-platform development technologies.
+
+\section{Document Organization}
+\begin{itemize}
+    \item \textbf{Chapter 2}: Functional requirements organized by feature epic
+    \item \textbf{Chapter 3}: Non-functional requirements with ISO 25010 alignment
+    \item \textbf{Chapter 4}: Requirements traceability and analysis
+    \item \textbf{Chapter 5}: Key insights and observations
+\end{itemize}
+
+\newpage
+
+% =====================================================================
+% SECTION 2: FUNCTIONAL REQUIREMENTS
+% =====================================================================
+\chapter{Functional Requirements by Epic}
+
+\section{Game Management (Epic PLY-5)}
+
+The Game Management module encompasses all features related to creating, discovering, joining, and managing basketball games.
+
+\subsection{FR-00: Create a Game}
+\label{fr:create-game}
+
+\begin{tabular}{lp{10cm}}
+    \toprule
+    \textbf{Requirement ID} & FR-00 \\
+    \textbf{Title} & Create a Game \\
+    \textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+    \textbf{Status} & To Do \\
+    \bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+    \textit{``As Miguel, I want to create a game with custom parameters, so that I can organize matches with specific settings and invite players.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+    \item The user can select a court/location from a list or map
+    \item The user can set the date (must be today or future date)
+    \item The user can set the time for the game
+    \item The user can choose game format: 1v1, 2v2, 3v3, 4v4, or 5v5
+    \item The user can set visibility as Public or Private
+    \item The user can enable or disable ranked mode
+    \item The user can choose team formation: Random Teams or Manual Teams
+    \item The user can set target score between 11 and 21 points
+    \item The user can invite friends from friends list
+    \item Invited players receive in-app and push notifications
+    \item The user becomes the host automatically upon game creation
+    \item A confirmation message is displayed after successful game creation
+    \item The created game appears in the appropriate game lists
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-08 (Learnability), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\subsection{FR-02: Receive Game Notifications}
+\label{fr:game-notifications}
+
+\begin{tabular}{lp{10cm}}
+    \toprule
+    \textbf{Requirement ID} & FR-02 \\
+    \textbf{Title} & Receive Game Notifications \\
+    \textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+    \textbf{Status} & To Do \\
+    \bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+    \textit{``As Miguel, I want to receive notifications when games are created in my favorite courts, so that I can quickly join games that interest me.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+    \item Users receive in-app notifications when a game is created at favorite courts
+    \item Users receive push notifications (if notification preferences allow)
+    \item Notifications include game details: court, time, date, format, and host
+    \item Notifications provide a direct link to the game details
+    \item Notifications are only sent to users who have enabled this notification type
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-03 (Graceful Degradation), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\subsection{FR-01: Respond to Game Invitation}
+\label{fr:respond-invitation}
+
+\begin{tabular}{lp{10cm}}
+    \toprule
+    \textbf{Requirement ID} & FR-01 \\
+    \textbf{Title} & Respond to Game Invitation \\
+    \textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+    \textbf{Status} & To Do \\
+    \bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+    \textit{``As a basketball player, I want to accept or decline game invitations, so that I can control which games I participate in.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+    \item Users can view all pending game invitations in a dedicated section
+    \item Each invitation displays complete game details
+    \item Users can accept an invitation with one action
+    \item Users can decline an invitation with one action
+    \item The host receives a notification when invitation is accepted or declined
+    \item Accepted invitations add the user to the game's player list
+    \item Declined invitations remove the user from pending invitations
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\subsection{FR-03: Browse and Search Games}
+\label{fr:browse-games}
+
+\begin{tabular}{lp{10cm}}
+    \toprule
+    \textbf{Requirement ID} & FR-03 \\
+    \textbf{Title} & Browse and Search Games \\
+    \textbf{Priority} & \colorbox{red!30}{Highest} \\
+    \textbf{Status} & To Do \\
+    \bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+    \textit{``As Miguel, I want to browse and filter available games, so that I can find games that match my preferences.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+    \item Users can view all public games in a list or map view
+    \item Users can filter games by date (today, tomorrow, specific date)
+    \item Users can filter games by court/location
+    \item Users can filter games by ranked/unranked status
+    \item Users can filter games by format (1v1, 2v2, 3v3, 4v4, 5v5)
+    \item Search results display key game information: time, location, format, ranked status
+    \item Users can tap a game to view full details
+    \item The list updates in real-time when new games are created
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-03 (Graceful Degradation), NFR-08 (Learnability), NFR-13 (GPS Integration)
+
+\newpage
+
+% =====================================================================
+% SECTION 3: COURT AVAILABILITY
+% =====================================================================
+\section{Court Availability (Epic PLY-6)}
+
+The Court Availability module handles court discovery, management, occupancy tracking, and user check-ins.
+
+\subsection{FR-16: Court Check-In}
+\label{fr:court-checkin}
+
+\begin{tabular}{lp{10cm}}
+    \toprule
+    \textbf{Requirement ID} & FR-16 \\
+    \textbf{Title} & Court Check-In \\
+    \textbf{Priority} & \colorbox{red!30}{Highest} \\
+    \textbf{Status} & To Do \\
+    \bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+    \textit{``As Carlos, I want to check in when I arrive at a court, so that others know I'm there.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+    \item Users can check in to a court from the court's page
+    \item Check-in uses GPS to find the nearest court
+    \item Users can manually select a court to check in if GPS is unavailable
+    \item Users appear in the list of players currently at the court if they agree to
+    \item Users can check out manually or are auto-checked-out after 4 hours
+    \item System sends notification to user's friends when they check in (if agreed)
+    \item Users cannot check in to more than one court simultaneously
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-05 (Data Privacy), NFR-07 (Location Privacy), NFR-08 (Learnability), NFR-13 (GPS Integration)
+
+\vspace{1cm}
+
+\subsection{FR-17: Court Occupancy Display}
+\label{fr:occupancy-display}
+
+\begin{tabular}{lp{10cm}}
+    \toprule
+    \textbf{Requirement ID} & FR-17 \\
+    \textbf{Title} & Court Occupancy Display \\
+    \textbf{Priority} & \colorbox{red!30}{Highest} \\
+    \textbf{Status} & To Do \\
+    \bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+    \textit{``As Carlos, I want to see how many players are at each court, so that I can decide where to play.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+    \item Each court displays the current number of checked-in players
+    \item The occupancy count updates in real-time
+    \item Users can view a list of who is checked in at each court
+    \item The map view shows occupancy indicators on court markers
+    \item Historical occupancy patterns are displayed
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-03 (Graceful Degradation), NFR-08 (Learnability)
+
+\vspace{1cm}
+
+\subsection{FR-30: View Court Details and Add to Favorites}
+\label{fr:court-details}
+
+\begin{tabular}{lp{10cm}}
+    \toprule
+    \textbf{Requirement ID} & FR-30 \\
+    \textbf{Title} & View Court Details and Favorites \\
+    \textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+    \textbf{Status} & To Do \\
+    \bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+    \textit{``As Miguel, I want to view court details and add courts to my favorites, so that I can easily find courts I like and receive notifications about games there.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+    \item Users can view detailed information about any court
+    \item Court details include: name, address, hoops, surface type, lighting, conditions
+    \item Court details display average rating and recent reviews
+    \item Court details show current occupancy and upcoming games
+    \item Users can add a court to favorites with one tap
+    \item Users can remove a court from favorites
+    \item Users are limited to 5 favorite courts maximum
+    \item A visual indicator shows whether a court is already favorite
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\subsection{FR-32: Search Courts}
+\label{fr:search-courts}
+
+\begin{tabular}{lp{10cm}}
+    \toprule
+    \textbf{Requirement ID} & FR-32 \\
+    \textbf{Title} & Search Courts \\
+    \textbf{Priority} & \colorbox{priorityMust!30}{High} \\
+    \textbf{Status} & To Do \\
+    \bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+    \textit{``As Carlos, I want to search for courts interactively and easily, so that I can find new courts to try out.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+    \item Users can search a court by location
+    \item Users can search the court by name
+    \item Users can filter courts by location
+    \item Users can filter courts by occupancy
+    \item Users can search for courts in a list or in a maps
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-03 (Graceful Degradation), NFR-07 (Location Privacy), NFR-08 (Learnability), NFR-09 (Error Feedback), NFR-13 (GPS Integration)
+
+\newpage
+
+% =====================================================================
+% SECTION 4: PLAYERS AND SOCIAL FEATURES
+% =====================================================================
+\section{Players and Social Features (Epic PLY-7)}
+
+The Players and Social Features module encompasses player discovery, friendship management, communication, and player interactions.
+
+\subsection{FR-22: Send Friend Requests}
+\label{fr:send-friend-requests}
+
+\begin{tabular}{lp{10cm}}
+    \toprule
+    \textbf{Requirement ID} & FR-22 \\
+    \textbf{Title} & Send Friend Requests \\
+    \textbf{Priority} & \colorbox{yellow!30}{Medium} \\
+    \textbf{Status} & To Do \\
+    \bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+    \textit{``As Miguel, I want to add other players as friends, so that I can easily organize games with them and know when they are at the court.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+    \item Users can send friend requests from player profiles
+    \item Users can search for players by name or username to add
+    \item Users can send friend request by sharing a link
+    \item Users can add friends with a QR Code
+    \item The recipient receives in-app and push notifications
+    \item Users cannot send duplicate requests to the same person
+    \item Users can cancel sent requests that haven't been accepted
+    \item Pending sent requests are visible in a dedicated section
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-02 (Data Consistency), NFR-05 (Data Privacy), NFR-09 (Error Feedback)
+
+\vspace{1cm}
+
+\subsection{FR-24: Game Chat}
+\label{fr:game-chat}
+
+\begin{tabular}{lp{10cm}}
+    \toprule
+    \textbf{Requirement ID} & FR-24 \\
+    \textbf{Title} & Game Chat \\
+    \textbf{Priority} & \colorbox{yellow!30}{Medium} \\
+    \textbf{Status} & To Do \\
+    \bottomrule
+\end{tabular}
+
+\vspace{0.5cm}
+
+\textbf{User Story:}
+\begin{quote}
+    \textit{``As Miguel, I want to chat with other players in my game, so that we can coordinate details and communicate.''}
+\end{quote}
+
+\textbf{Acceptance Criteria:}
+\begin{enumerate}
+    \item Each game has a dedicated chat room
+    \item Only players in the game can access the chat
+    \item Messages are displayed in chronological order
+    \item Users receive notifications for new messages (if enabled)
+    \item Users can send text messages (up to 500 characters)
+    \item The host can disable chat if needed
+    \item Chat is deleted after game ends
+\end{enumerate}
+
+\textbf{Associated Non-Functional Requirements:}
+NFR-01 (Offline Availability), NFR-02 (Data Consistency), NFR-03 (Graceful Degradation), NFR-05 (Data Privacy), NFR-06 (Secure Data Transmission), NFR-09 (Error Feedback), NFR-18 (Logging), NFR-21 (Message Encryption)
+
+\newpage
+
+% =====================================================================
+% SECTION 5: NON-FUNCTIONAL REQUIREMENTS
+% =====================================================================
+\chapter{Non-Functional Requirements}
+
+This chapter details all 21 non-functional requirements aligned with ISO/IEC 25010 quality model. Each requirement specifies quality attributes and constraints that apply across multiple functional features.
+
+\section{NFR-01: Offline Availability}
+\label{nfr:offline-availability}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-01 \\
+    \hline
+    \textbf{Title} & Offline Availability \\
+    \hline
+    \textbf{Requirement} & The application shall support offline access to previously loaded data, informing when the user is offline and the last updated timestamp. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityMust!30}{\textbf{Must Have}} \\
+    \hline
+    \textbf{ISO-25010} & Reliability (Availability, Fault Tolerance) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-02: Data Consistency}
+\label{nfr:data-consistency}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-02 \\
+    \hline
+    \textbf{Title} & Data Consistency \\
+    \hline
+    \textbf{Requirement} & The application shall not lose data after a write operation, even if a crash or an unexpected termination occurs. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityMust!30}{\textbf{Must Have}} \\
+    \hline
+    \textbf{ISO-25010} & Reliability (Faultlessness, Recoverability) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-03: Graceful Degradation}
+\label{nfr:graceful-degradation}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-03 \\
+    \hline
+    \textbf{Title} & Graceful Degradation \\
+    \hline
+    \textbf{Requirement} & In case of a failed backend request, the application shall: (1) Display cached data when available, (2) Show a clear, user-friendly error message, (3) Never crash or display technical error details, (4) Allow retry when appropriate. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityShould!30}{\textbf{Should Have}} \\
+    \hline
+    \textbf{ISO-25010} & Reliability (Fault Tolerance) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-04: User Authentication}
+\label{nfr:authentication}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-04 \\
+    \hline
+    \textbf{Title} & User Authentication \\
+    \hline
+    \textbf{Requirement} & The application shall allow users to authenticate via social login or email/password. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityMust!30}{\textbf{Must Have}} \\
+    \hline
+    \textbf{ISO-25010} & Security (Authenticity, Confidentiality) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-05: Data Privacy (GDPR Compliance)}
+\label{nfr:gdpr}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-05 \\
+    \hline
+    \textbf{Title} & Data Privacy (GDPR Compliance) \\
+    \hline
+    \textbf{Requirement} & The application shall comply with GDPR requirements: explicit user consent before data collection, data minimization, user right to access/delete data, transparent privacy policy. Location data used only for real-time search, not stored long term. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityMust!30}{\textbf{Must Have}} \\
+    \hline
+    \textbf{ISO-25010} & Security (Confidentiality, Integrity) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-06: Secure Data Transmission}
+\label{nfr:secure-transmission}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-06 \\
+    \hline
+    \textbf{Title} & Secure Data Transmission \\
+    \hline
+    \textbf{Requirement} & The application shall transmit data between client and backend using HTTPS with TLS 1.3. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityMust!30}{\textbf{Must Have}} \\
+    \hline
+    \textbf{ISO-25010} & Security (Confidentiality, Integrity) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-07: Location Privacy}
+\label{nfr:location-privacy}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-07 \\
+    \hline
+    \textbf{Title} & Location Privacy \\
+    \hline
+    \textbf{Requirement} & The application shall never expose to other users the user location coordinates; only the location of the court should be shared publicly. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityMust!30}{\textbf{Must Have}} \\
+    \hline
+    \textbf{ISO-25010} & Security (Confidentiality) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-08: Learnability}
+\label{nfr:learnability}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-08 \\
+    \hline
+    \textbf{Title} & Learnability \\
+    \hline
+    \textbf{Requirement} & The application shall enable new users to complete core tasks without prior training or documentation. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityMust!30}{\textbf{Must Have}} \\
+    \hline
+    \textbf{ISO-25010} & Interaction Capability (Learnability) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-09: Error Feedback}
+\label{nfr:error-feedback}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-09 \\
+    \hline
+    \textbf{Title} & Error Feedback \\
+    \hline
+    \textbf{Requirement} & The application shall provide a clear, descriptive error message when a user action fails, explaining why. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityShould!30}{\textbf{Should Have}} \\
+    \hline
+    \textbf{ISO-25010} & Interaction Capability (Self-descriptiveness, User Error Protection) \\
+    \hline
+\end{tabular}
+
+\newpage
+
+\section{NFR-10: Outdoor Readability}
+\label{nfr:outdoor-readability}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-10 \\
+    \hline
+    \textbf{Title} & Outdoor Readability \\
+    \hline
+    \textbf{Requirement} & The application shall remain readable in outdoor sunlight conditions through high contrast UI and support for system dark/light modes. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityCould!30}{\textbf{Could Have}} \\
+    \hline
+    \textbf{ISO-25010} & Interaction Capability (Operability) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-11: Cross-Platform Support}
+\label{nfr:cross-platform}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-11 \\
+    \hline
+    \textbf{Title} & Cross-Platform Support \\
+    \hline
+    \textbf{Requirement} & The application shall run on both Android and iOS platforms. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityMust!30}{\textbf{Must Have}} \\
+    \hline
+    \textbf{ISO-25010} & Flexibility (Adaptability) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-12: Screen Compatibility}
+\label{nfr:screen-compatibility}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-12 \\
+    \hline
+    \textbf{Title} & Screen Compatibility \\
+    \hline
+    \textbf{Requirement} & The application shall function correctly on devices with varying screen sizes and capabilities, for phones only. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityShould!30}{\textbf{Should Have}} \\
+    \hline
+    \textbf{ISO-25010} & Flexibility (Adaptability) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-13: GPS Integration}
+\label{nfr:gps-integration}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-13 \\
+    \hline
+    \textbf{Title} & GPS Integration \\
+    \hline
+    \textbf{Requirement} & The application shall integrate with device's native GPS/GNSS hardware for location services. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityMust!30}{\textbf{Must Have}} \\
+    \hline
+    \textbf{ISO-25010} & Compatibility (Interoperability) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-14: Maps Service Integration}
+\label{nfr:maps-integration}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-14 \\
+    \hline
+    \textbf{Title} & Maps Service Integration \\
+    \hline
+    \textbf{Requirement} & Application shall integrate with device maps services to open maps court location. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityCould!30}{\textbf{Could Have}} \\
+    \hline
+    \textbf{ISO-25010} & Compatibility (Co-existence, Interoperability) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-15: Code Modularity}
+\label{nfr:modularity}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-15 \\
+    \hline
+    \textbf{Title} & Code Modularity \\
+    \hline
+    \textbf{Requirement} & The application shall follow clean architecture principles with separation between presentation, domain, and data layers. Changes to one module shall have minimal impact on others. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityShould!30}{\textbf{Should Have}} \\
+    \hline
+    \textbf{ISO-25010} & Maintainability (Modularity, Modifiability) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-16: Testability}
+\label{nfr:testability}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-16 \\
+    \hline
+    \textbf{Title} & Testability \\
+    \hline
+    \textbf{Requirement} & The application shall have unit tests for core business logic. Acceptance tests shall be written for user stories following ATDD methodology. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityShould!30}{\textbf{Should Have}} \\
+    \hline
+    \textbf{ISO-25010} & Maintainability (Testability) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-17: Documentation}
+\label{nfr:documentation}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-17 \\
+    \hline
+    \textbf{Title} & Documentation \\
+    \hline
+    \textbf{Requirement} & The application shall be complemented with documentation for APIs and business logic. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityShould!30}{\textbf{Should Have}} \\
+    \hline
+    \textbf{ISO-25010} & Maintainability (Analysability) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-18: Logging}
+\label{nfr:logging}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-18 \\
+    \hline
+    \textbf{Title} & Logging \\
+    \hline
+    \textbf{Requirement} & The application shall generate centralized logs for failures and errors, structured for analysis. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityShould!30}{\textbf{Should Have}} \\
+    \hline
+    \textbf{ISO-25010} & Maintainability (Analysability) \\
+    \hline
+\end{tabular}
+
+\newpage
+
+\section{NFR-19: User Moderation}
+\label{nfr:moderation}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-19 \\
+    \hline
+    \textbf{Title} & User Moderation \\
+    \hline
+    \textbf{Requirement} & The application shall include report features to report players and events to mitigate harassment or unsafe gatherings. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityCould!30}{\textbf{Could Have}} \\
+    \hline
+    \textbf{ISO-25010} & Safety (Risk Identification) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-20: Camera/Storage Integration}
+\label{nfr:camera-storage}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-20 \\
+    \hline
+    \textbf{Title} & Camera/Storage Integration \\
+    \hline
+    \textbf{Requirement} & The system shall access native camera to take photographs and allow image upload directly from the device camera and storage. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityMust!30}{\textbf{Must Have}} \\
+    \hline
+    \textbf{ISO-25010} & Compatibility (Interoperability) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-21: Message Encryption}
+\label{nfr:encryption}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-21 \\
+    \hline
+    \textbf{Title} & Message Encryption \\
+    \hline
+    \textbf{Requirement} & The application shall have message End-to-end encryption, using at least AES-256. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityMust!30}{\textbf{Must Have}} \\
+    \hline
+    \textbf{ISO-25010} & Security (Confidentiality, Integrity) \\
+    \hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\section{NFR-22: Calendar Service Integration}
+\label{nfr:calendar-integration}
+
+\begin{tabular}{|l|p{10cm}|}
+    \hline
+    \textbf{ID} & NFR-22 \\
+    \hline
+    \textbf{Title} & Calendar Service Integration \\
+    \hline
+    \textbf{Requirement} & Application shall integrate with device calendar services to export game events. \\
+    \hline
+    \textbf{Priority} & \colorbox{priorityCould!30}{\textbf{Could Have}} \\
+    \hline
+    \textbf{ISO-25010} & Compatibility (Co-existence, Interoperability) \\
+    \hline
+\end{tabular}
+
+\newpage
+
+% =====================================================================
+% SECTION 6: REQUIREMENTS SUMMARY AND ANALYSIS
+% =====================================================================
+\chapter{Requirements Analysis and Traceability}
+
+\section{Non-Functional Requirements Summary}
+
+\subsection{Priority Distribution}
+
+\begin{table}[h]
+    \centering
+    \caption{NFR Distribution by Priority Level}
+    \begin{tabularx}{0.8\textwidth}{|l|c|X|}
+        \hline
+        \textbf{Priority} & \textbf{Count} & \textbf{Requirements} \\
+        \hline
+        Must Have & 10 & NFR-01, NFR-02, NFR-04, NFR-05, NFR-06, NFR-07, NFR-08, NFR-11, NFR-13, NFR-20, NFR-21 \\
+        \hline
+        Should Have & 8 & NFR-03, NFR-09, NFR-12, NFR-15, NFR-16, NFR-17, NFR-18 \\
+        \hline
+        Could Have & 4 & NFR-10, NFR-14, NFR-19, NFR-22 \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\subsection{ISO-25010 Quality Characteristic Distribution}
+
+\begin{table}[h]
+    \centering
+    \caption{NFR Mapping to ISO-25010 Characteristics}
+    \begin{tabularx}{\textwidth}{|l|c|p{8cm}|}
+        \hline
+        \textbf{ISO-25010 Characteristic} & \textbf{Count} & \textbf{Associated NFRs} \\
+        \hline
+        Reliability & 3 & NFR-01, NFR-02, NFR-03 \\
+        \hline
+        Security & 6 & NFR-04, NFR-05, NFR-06, NFR-07, NFR-21 \\
+        \hline
+        Interaction Capability & 3 & NFR-08, NFR-09, NFR-10 \\
+        \hline
+        Flexibility & 2 & NFR-11, NFR-12 \\
+        \hline
+        Compatibility & 4 & NFR-13, NFR-14, NFR-20, NFR-22 \\
+        \hline
+        Maintainability & 4 & NFR-15, NFR-16, NFR-17, NFR-18 \\
+        \hline
+        Safety & 1 & NFR-19 \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\section{Functional Requirements Summary}
+
+\subsection{FR Distribution by Epic}
+
+\begin{table}[h]
+    \centering
+    \caption{Functional Requirements by Feature Epic}
+    \begin{tabularx}{0.9\textwidth}{|l|c|l|}
+        \hline
+        \textbf{Epic} & \textbf{Count} & \textbf{Stories} \\
+        \hline
+        Game Management (PLY-5) & 10 & FR-00 to FR-09, FR-31 \\
+        \hline
+        Court Availability (PLY-6) & 7 & FR-16 to FR-21, FR-30, FR-32 \\
+        \hline
+        Players \& Social (PLY-7) & 6 & FR-11, FR-13, FR-22 to FR-24, FR-26 \\
+        \hline
+        Ranking \& Teams (PLY-8) & 3 & FR-10, FR-12, FR-14 \\
+        \hline
+        User Profile \& Settings (PLY-9) & 4 & FR-25, FR-27 to FR-29 \\
+        \hline
+        Spontaneous Games & 1 & FR-15 \\
+        \hline
+        \textbf{TOTAL} & \textbf{31} & \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\subsection{FR Distribution by Priority}
+
+\begin{table}[h]
+    \centering
+    \caption{Functional Requirements by Priority Level}
+    \begin{tabularx}{0.8\textwidth}{|l|c|c|}
+        \hline
+        \textbf{Priority Level} & \textbf{Count} & \textbf{Percentage} \\
+        \hline
+        Highest & 5 & 16\% \\
+        \hline
+        High & 14 & 45\% \\
+        \hline
+        Medium & 11 & 35\% \\
+        \hline
+        Low & 1 & 3\% \\
+        \hline
+        Lowest & 1 & 3\% \\
+        \hline
+    \end{tabularx}
+\end{table}
+
+\section{NFR-FR Traceability Matrix}
+
+\subsection{Most Critical Non-Functional Requirements}
+
+The following NFRs are referenced by the highest number of functional requirements and represent critical quality drivers:
+
+\begin{enumerate}
+    \item \textbf{NFR-03 (Graceful Degradation)}: Referenced by 15 FRs
+    \item \textbf{NFR-09 (Error Feedback)}: Referenced by 16 FRs
+    \item \textbf{NFR-02 (Data Consistency)}: Referenced by 14 FRs
+    \item \textbf{NFR-05 (Data Privacy/GDPR)}: Referenced by 9 FRs
+    \item \textbf{NFR-01 (Offline Availability)}: Referenced by 8 FRs
+\end{enumerate}
+
+\section{Key Quality Observations}
+
+\subsection{Reliability and Resilience Focus}
+
+The high frequency of reliability-related NFRs (NFR-01, NFR-02, NFR-03) across functional requirements reflects the critical nature of a location-based, real-time application. The system must gracefully handle network failures, maintain data integrity under adverse conditions, and provide offline capabilities for court discovery and game information.
+
+\subsection{Security and Privacy as Design Principles}
+
+Six NFRs directly address security concerns (NFR-04 through NFR-07, NFR-21), with location privacy (NFR-07) and GDPR compliance (NFR-05) being particularly pervasive. This reflects the sensitivity of location data in the application domain and the regulatory requirements for European user bases.
+
+\subsection{Usability and Learnability Priority}
+
+NFR-08 (Learnability) and NFR-09 (Error Feedback) are designated as ``Must Have'' priorities, reflecting a user-centered design philosophy essential for casual basketball players without technical background. The application must be intuitive and forgiving of user errors.
+
+\subsection{Cross-Platform Development Imperative}
+
+NFR-11 (Cross-Platform Support) and NFR-12 (Screen Compatibility) underscore the need for consistent user experience across Android and iOS platforms with varying device capabilities. This architectural decision influences technology stack choices toward cross-platform frameworks.
+
+\subsection{Architectural Implications}
+
+\subsubsection{Clean Architecture with Modularity}
+NFR-15 (Code Modularity) and NFR-16 (Testability) drive architectural decisions requiring separation of concerns across presentation, domain, and data layers, directly supporting ATDD and iterative development practices.
+
+\subsubsection{Comprehensive Quality Assurance}
+The emphasis on NFR-16 (Testability) combined with ATDD methodology and acceptance test requirements in multiple FRs ensures that quality is built in from development inception rather than added afterward.
+
+\subsubsection{Operations and Maintainability}
+NFR-17 (Documentation), NFR-18 (Logging), and NFR-15 (Modularity) collectively provide the foundation for long-term maintainability and operational observability, critical for production mobile applications.
+
+\newpage
+
+% =====================================================================
+% SECTION 7: CONCLUSION
+% =====================================================================
+\chapter{Conclusion}
+
+\section{Requirements Completeness}
+
+This specification defines 31 functional requirements across 6 major feature epics and 21 non-functional requirements aligned with ISO/IEC 25010 quality standards. The comprehensive coverage ensures that all aspects of system behavior, quality attributes, and constraints are explicitly documented.
+
+\section{Implementation Roadmap Implications}
+
+The priority distribution suggests a phased implementation approach:
+
+\begin{enumerate}
+    \item \textbf{Phase 1 (MVP)}: 5 Highest-priority features (game discovery and court check-in)
+    \item \textbf{Phase 2}: 14 High-priority features (game creation, management, and social features)
+    \item \textbf{Phase 3}: 11 Medium-priority features (advanced filtering, tournaments, team management)
+    \item \textbf{Phase 4}: 1 Low-priority feature (court reviews and ratings)
+\end{enumerate}
+
+\section{Quality Assurance Strategy}
+
+The concentration of quality requirements across reliability, security, and usability dimensions suggests a multi-faceted QA strategy:
+
+\begin{itemize}
+    \item \textbf{Reliability Testing}: Automated testing of offline scenarios, error recovery, and data consistency
+    \item \textbf{Security Testing}: Penetration testing, encryption validation, GDPR compliance audits
+    \item \textbf{Usability Testing}: User acceptance testing with target demographic, learnability assessments
+    \item \textbf{Performance Testing}: Load testing for concurrent check-ins, real-time game updates
+\end{itemize}
+
+\section{Future Enhancements}
+
+This specification establishes the foundation for future enhancements:
+
+\begin{itemize}
+    \item Advanced analytics on court occupancy patterns
+    \item Artificial intelligence for game recommendations
+    \item Social features: streaming, spectator monetization
+    \item Integration with wearable devices for activity tracking
+\end{itemize}
+
+\vspace{2cm}
+
+\noindent
+\textit{Document Version: 1.0}\\
+\textit{Status: Draft for Dissertation}\\
+\textit{Last Updated: \today}
+
+\end{document}
