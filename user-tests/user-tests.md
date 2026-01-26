@@ -8,14 +8,14 @@ After the tasks, users will make a Feature Prioritization Exercise with card sor
 
 Scenarios
 
-1 - _Verifica os jogos existentes num campo proximo_
-2 - _Cria uma equipa nova_
-3 - _Ve quantos jogadores vao estar em campo no dia 20 de janeiro as 17horas_
-4 - _Ve os jogadores no ultimo jogo que ganhaste_
-5 - _Cria um novo jogo_
-6 - _Pesquisa campos no mapa_
-7 - _Ve o teu proximo Jogo_
-8 - _Ve a tabela de classificacao de um campo_
+    1 - Verifica os jogos existentes num campo proximo
+    2 - Cria uma equipa nova
+    3 - Ve quantos jogadores vao estar em campo no dia 20 de janeiro as 17horas
+    4 - Ve os jogadores no ultimo jogo que ganhaste
+    5 - Cria um novo jogo
+    6 - Pesquisa campos no mapa
+    7 - Ve o teu proximo Jogo
+    8 - Ve a tabela de classificacao de um campo
 
 
 ### Section 1: Task Success & Effort (2 minutes)
