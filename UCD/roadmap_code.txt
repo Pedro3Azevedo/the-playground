@@ -1,0 +1,33 @@
+--
+config:
+  theme: default
+  themeVariables:
+    textColor: '#000000'
+    fontSize: 14px
+---
+gantt
+    title Project Development Roadmap
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b %d
+    section Phase 1: UCD Research & Design
+    Initial Survey & Flyers              :p1_0, 2025-09-01, 14d
+    Responses Gathering                  :p1_1, 2025-09-14, 50d
+    Survey Analysis                      :p1_2, 2025-11-03, 7d
+    Personas & User Scenes               :p1_3, 2025-11-10, 7d
+    Functional Requirements              :p1_4, 2025-11-17, 10d
+    Non-Functional Requirements          :p1_5, 2025-11-27, 10d
+    Figma Prototypes                     :p1_6, 2025-12-28, 29d
+    User Testing                         :p1_7, 2026-01-26, 7d
+    section Phase 2: MVP Development & UX Evaluation
+    Sprint 1                             :p2_1, 2026-02-02, 14d
+    Sprint 2                             :p2_2, 2026-02-16, 14d
+    Sprint 3                             :p2_3, 2026-03-02, 14d
+    Sprint 4                             :p2_4, 2026-03-16, 14d
+    MVP Usability & UX Evaluation        :p2_5, 2026-03-30, 7d
+    section Phase 3: Complete Application & Final Evaluation
+    Sprint 5                             :p3_1, 2026-04-06, 14d
+    Sprint 6                             :p3_2, 2026-04-20, 14d
+    Final Comprehensive Evaluation       :p3_5, 2026-05-04, 7d
+
+    section Improvements
+    Sprint 7                             :p4_1, 2026-05-11, 14d
