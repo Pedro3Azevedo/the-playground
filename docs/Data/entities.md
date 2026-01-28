@@ -3,8 +3,7 @@
 - email
 - phone number
 - password
-- First Name
-- Last Name
+- username
 - date of birth
 - height
 - position 1
@@ -13,5 +12,5 @@
 - CurrentTeam
 - Past teams (list of teams he played add number of years)
 - favourite team?
-- Competitive games (Boolean)
+- competitive leve (enum)
 

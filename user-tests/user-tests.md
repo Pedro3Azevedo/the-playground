@@ -17,6 +17,24 @@ Scenarios
     7 - Ve o teu proximo Jogo
     8 - Ve a tabela de classificacao de um campo
 
+Criar conta
+
+- ranking geral
+- barra de progresso ser tudo um gradiante
+
+pagina inicial
+
+barra de navegaçao para home esta mau
+
+jogos balancear sexo
+
+alterar o simbolo de classificacao
+
+ranking geral de um jogador
+jogos fechados nao contao para classificacao
+ranking em equipa de jogo aberto e por jogador 
+
+
 
 ### Section 1: Task Success & Effort (2 minutes)
 Completion check:
