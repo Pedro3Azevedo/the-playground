@@ -34,6 +34,30 @@ ranking geral de um jogador
 jogos fechados nao contao para classificacao
 ranking em equipa de jogo aberto e por jogador 
 
+criar conta - jogar em equipa federada
+
+favoritos nao é um coracao
+
+convidar jogadores no seu perfil
+
+Janela no campo e perfil nao estar em fade so a caixa faz mais destaque
+
+filtros no historico
+
+criar novo jogo, pontos
+
+nao ter tanta info? do uma pessoa e que adicionou
+
+fundo mais escuro
+
+ser mais rapido para criara a equipa
+
+em vez de historico ser jogos
+no historioco, apresentar a vermelho ou verde tudo e a bold a equipa do jogador
+
+criar jogo escolha de equipas por omes ou algo'
+
+
 
 
 ### Section 1: Task Success & Effort (2 minutes)
