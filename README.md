@@ -1,3 +1,5 @@
+**Note: Source code is not publicly shared in this repository. This repository contains dissertation documentation, user research materials, design artifacts, and other documents to support the dissertation.**
+
 # The Playground: 
 ## mobile platform to connect amateur basketball players
 
@@ -6,7 +8,7 @@
 This repository contains the dissertation materials, documentation, and non-code artifacts for *The Playground*, a mobile platform designed to connect amateur basketball players in Portugal for organizing casual games. The project combines user-centered design (UCD) principles with Agile/Scrum methodologies across three iterative development phases.
 The application is a Kotlin Multiplatform with Compose Multiplatform for the UI, with Acceptance Test-Driven Development, and a MVVM pattern, along side Supabase as a MBaaS.
 
-**Note:** Source code is not publicly shared in this repository. This repository contains dissertation documentation, user research materials, design artifacts, and other documents to support the dissertation.
+
 
 **Dissertation Proposal Document** - [dissertationProposalPedroAzevedo2026.pdf](dissertationProposalPedroAzevedo2026.pdf)
 
