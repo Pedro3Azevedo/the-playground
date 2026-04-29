@@ -12,9 +12,7 @@
 | 7        | y        |            |                     |                 |              |               |
 | 8        | y        |            |                     |                 |              |               |
 
-Notes:
-- imagem de perfil ser uma bola
-- 
+
 
 # Matos
 
@@ -67,7 +65,7 @@ Notes:
 | 8        |          |            |                     |                 |              |               |
 
 
-# User 1
+# Goncalo
 
 | Scenario | Success? | Ease (1–5) | Most Useful Feature | Confusion Point | Missing Info | Priority Tier |
 |----------|----------|------------|---------------------|-----------------|--------------|---------------|
